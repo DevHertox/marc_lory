@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marc Lory - Comédien & Figurant</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet"> 
+</head>
+<body>
+	<!-- ==================== LOADER ==================== -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+	<script>
+		window.addEventListener("load", () => {
+			const loader = document.getElementById("loader");
+			const content = document.getElementById("content");
+
+			loader.style.opacity = 1;
+			let fade = setInterval(() => {
+				if (loader.style.opacity > 0) {
+					loader.style.opacity -= 0.1;
+				} else {
+					clearInterval(fade);
+					loader.style.display = "none";
+					content.style.display = "block";
+				}
+			}, 60);
+		});
+
+	</script>
+
+    <!-- ==================== Contenu principal du site (caché au début) ==================== -->
+    <div id="main-content content" class="hidden">
+
+        <!-- ==================== Navbar ==================== -->
+        <header>
+            <nav class="navbar">
+                <a href="#" class="nav-logo">Marc Lory</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#about" class="nav-link">À propos</a></li>
+                    <li class="nav-item"><a href="#experiences" class="nav-link">Expériences</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link">Galerie</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="assets/images/attached_assets/V - Cinéma_1753948698900.pdf" id="cv-download-btn" class="btn">Télécharger mon CV</a>
+                
+                <div class="popup-overlay" id="popup-overlay">
+                    <div class="popup">
+                    <h2>Code requis</h2>
+                    <p>Pour télécharger le CV, entrez le code d'accès :</p>
+                    <input type="password" id="code-input" placeholder="Code d'accès" />
+                    <p id="error-message"></p>
+                    <div class="popup-buttons">
+                        <button id="cancel-btn">Annuler</button>
+                        <button id="submit-code">OK</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="toast-container" id="toast-container"></div>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- ==================== Section "À propos" ==================== -->
+            <section id="about" class="section-container">
+                <h2>À propos de moi</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="assets/images/attached_assets/Photo portrait - LORY Marc_1753948731388.jpg" alt="Portrait de Marc Lory">
+                    </div>
+                    <div class="about-text">
+                        <h3></h3>
+                        <p>
+                            
+                        </p>
+                        <p>
+                            Je suis constamment à la recherche de nouvelles expériences pour enrichir ma palette de jeu. Discipliné, ponctuel et toujours prêt à relever des défis, je m'investis pleinement dans chaque rôle pour servir la vision du réalisateur.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== Section "Expériences" ==================== -->
+            <section id="experiences" class="section-container">
+                <h2>Mes Expériences</h2>
+                <div class="experiences-grid">
+                    <!-- Carte 1 -->
+                    <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Figuration - "Le Grand Cirque"</h4>
+                                <p>Rôle d'un spectateur dans une scène de foule pour le long-métrage de Booder.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>Une excellente compréhension du fonctionnement d'un plateau de tournage et de la rigueur requise.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carte 2 -->
+                    <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Théâtre - "Les Justes"</h4>
+                                <p>Rôle de Stepan Fedorov dans la pièce d'Albert Camus, mise en scène par une troupe locale.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>Le développement de la présence scénique, la maîtrise du texte et l'interaction directe avec le public.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carte 3 -->
+                    <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Statue Vivante - Festival des Arts</h4>
+                                <p>Performance de rue en tant que statue vivante, demandant une grande maîtrise corporelle.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>Une discipline corporelle extrême, la patience et l'art de capter l'attention sans un mot.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carte 4 -->
+                    <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Publicité - "Vittel"</h4>
+                                <p>Figuration active dans un spot publicitaire pour la marque d'eau minérale.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>La rapidité d'exécution et l'adaptation aux contraintes techniques d'un tournage publicitaire.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Carte 5 -->
+                    <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Court-métrage - "Le Dernier Mot"</h4>
+                                <p>Rôle secondaire dans un film étudiant, explorant un personnage complexe.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>Une collaboration créative intense et la liberté d'expérimenter dans un cadre plus intimiste.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== Section "Galerie" ==================== -->
+            <section id="gallery" class="section-container">
+                <h2>Galerie Photos</h2>
+                <div class="gallery-grid">
+                    <img src="https://placehold.co/600x400/555/fff?text=Photo+1" alt="Photo de Marc Lory en situation 1">
+                    <img src="https://placehold.co/600x400/666/fff?text=Photo+2" alt="Photo de Marc Lory en situation 2">
+                    <img src="https://placehold.co/600x400/777/fff?text=Photo+3" alt="Photo de Marc Lory en situation 3">
+                    <img src="https://placehold.co/600x400/888/fff?text=Photo+4" alt="Photo de Marc Lory en situation 4">
+                </div>
+            </section>
+
+            <!-- ==================== Section "Contact" ==================== -->
+            <section id="contact" class="section-container">
+                <h2>Contactez-moi</h2>
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <form action="mailto:charibossollati.imael@gmail.com" method="post" enctype="text/plain">
+                            <div class="form-group">
+                                <label for="name">Nom</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+							<div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="subject" name="subject" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Envoyer</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Informations</h3>
+                        <p><strong>Adresse :</strong><br>78920 Ecquevilly</p>
+                        <p><strong>Email :</strong><br><a href="mailto:lorymarc.pro@gmail.com">lorymarc.pro@gmail.com</a></p>
+                        <p><strong>Téléphone :</strong><br><a href="tel:+33637943938">06 37 94 39 38</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ==================== Footer ==================== -->
+        <footer>
+            <p>&copy; 2025 Marc Lory. Tous droits réservés.</p>
+        </footer>
+
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>=
