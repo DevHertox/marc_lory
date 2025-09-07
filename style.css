@@ -1319,25 +1319,25 @@ textarea {
   padding: 0 12px;      
 }
 
-/* Icône */
 .input-icon i {
   color: #bbb;
   font-size: 1rem;
   flex-shrink: 0;
   display: flex;
-  align-items: center;  
+  align-items: center;   
 }
 
-/* Input + Textarea */
 .input-icon input,
 .input-icon textarea {
   flex: 1;
   border: none;
   outline: none;
   background: transparent;
-  color: #fff;
   font-family: inherit;
-  font-size: 1rem;
-  padding: 12px 0;    
+  font-size: 1rem;  
   resize: none;
+}
+input::placeholder {
+  vertical-align: middle; 
+  color: #999;
 }
