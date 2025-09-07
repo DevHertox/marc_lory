@@ -293,6 +293,23 @@
 	  backToTop.addEventListener("click", () => {
 	    window.scrollTo({ top: 0, behavior: "smooth" });
 	  });
+		const textarea = document.getElementById("message");
+
+		function toggleVerticalAlign() {
+		  if (textarea.value === "") {
+		    textarea.style.display = "flex";
+		    textarea.style.alignItems = "center";
+		  } else {
+		    textarea.style.display = "block";
+		  }
+		}
+		
+		textarea.addEventListener("input", toggleVerticalAlign);
+		textarea.addEventListener("blur", toggleVerticalAlign);
+		
+		toggleVerticalAlign();
+
 	</script>
+	
 </body>
 </html>
