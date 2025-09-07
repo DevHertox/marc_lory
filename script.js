@@ -15,7 +15,6 @@ window.addEventListener("load", () => {
     }, 60);
 });
 
-// CV download
 const cvDownloadBtn = document.getElementById('cv-download-btn');
 const popupOverlay = document.getElementById('popup-overlay');
 const cancelBtn = document.getElementById('cancel-btn');
@@ -35,6 +34,23 @@ function showToast(message, type = 'success') {
         toast.remove();
     }, 3000);
 }
+const animatables = document.querySelectorAll(
+  ".section-container, .hero-about-section, .experiences-grid .experience-card, .contact-content, .carousel-container"
+);
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.3 } 
+);
+
+animatables.forEach((el) => observer.observe(el));
+
 
 cvDownloadBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -154,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Style Switcher
 const styleSwitcher = document.querySelector('.style-switcher');
 const styleSwitcherToggler = document.querySelector('.style-switcher-toggler');
 
