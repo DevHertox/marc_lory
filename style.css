@@ -1201,11 +1201,13 @@ body.dark .footer-social a i {
 .input-icon i {
   position: absolute;
   left: 15px;
+  top: 50%;
+  transform: translateY(-50%); 
   color: #aaa;
   font-size: 1rem;
 }
 
 .input-icon input,
 .input-icon textarea {
-  padding-left: 40px; 
+  padding-left: 45px; 
 }
