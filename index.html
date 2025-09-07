@@ -293,21 +293,24 @@
 	  backToTop.addEventListener("click", () => {
 	    window.scrollTo({ top: 0, behavior: "smooth" });
 	  });
-		const textarea = document.getElementById("message");
+	  const textarea = document.getElementById("message");
+	
+	function toggleVerticalAlign() {
+	  if (textarea.value.trim() === "") {
+	    textarea.style.display = "flex";
+	    textarea.style.alignItems = "center";
+	    textarea.style.textAlign = "center"; 
+	  } else {
+	    textarea.style.display = "block";
+	    textarea.style.textAlign = "left";
+	  }
+	}
+	
+	textarea.addEventListener("input", toggleVerticalAlign);
+	textarea.addEventListener("blur", toggleVerticalAlign);
 
-		function toggleVerticalAlign() {
-		  if (textarea.value === "") {
-		    textarea.style.display = "flex";
-		    textarea.style.alignItems = "center";
-		  } else {
-		    textarea.style.display = "block";
-		  }
-		}
-		
-		textarea.addEventListener("input", toggleVerticalAlign);
-		textarea.addEventListener("blur", toggleVerticalAlign);
-		
-		toggleVerticalAlign();
+	toggleVerticalAlign();
+
 
 	</script>
 	
