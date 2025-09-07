@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marc Lory - Comédien & Figurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark">
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="main-content" class="hidden">
+
+        <header>
+            <div class="top-bar">
+                <div class="top-bar-content">
+                    <div class="top-bar-social">
+                        <a href="#" class="top-bar-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="top-bar-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/marc_comedien_figurant" target="_blank" class="top-bar-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/marclory" target="_blank" class="top-bar-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="top-bar-contact">
+                        <span class="top-bar-item"><i class="fas fa-phone-alt"></i> (+33) 6 37 94 39 38</span>
+                        <span class="top-bar-item"><i class="fas fa-envelope"></i> lorymarc.pro@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-bar" id="progressBar"></div>
+
+            <nav class="navbar">
+                <a href="#hero-about" class="nav-logo">Marc Lory</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#hero-about" class="nav-link"><i class="fas fa-home"></i></a></li>
+                    <li class="nav-item"><a href="#experiences" class="nav-link">Expériences</a></li>
+                    <li class="nav-item"><a href="#gallery-desktop" class="nav-link">Galerie</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="V - Cinéma_1753948698900.pdf" id="cv-download-btn" class="btn">Télécharger mon CV</a>
+                
+                <div class="popup-overlay" id="popup-overlay">
+                    <div class="popup">
+                        <h2>Code requis</h2>
+                        <p>Pour télécharger le CV, entrez le code d'accès :</p>
+                        <input type="password" id="code-input" placeholder="Code d'accès" />
+                        <p id="error-message"></p>
+                        <div class="popup-buttons">
+                            <button id="cancel-btn">Annuler</button>
+                            <button id="submit-code">OK</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="toast-container" id="toast-container"></div>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+            <div class="diagonal-band"></div>
+        </header>
+
+        <main>
+            <section id="hero-about" class="hero-about-section">
+                <div class="hero-content">
+                    <div class="animated-text-container">
+                        <h1 class="animated-text">Marc Lory</h1>
+                        <h2 class="animated-text delay-1">Comédien & Figurant</h2>
+                    </div>
+                    <div class="description-box">
+                        <p>Ancien streamer caritatif passionné par le contact humain et le storytelling, j'ai transformé mon amour pour la scène en une carrière de comédien et figurant. Mon expérience en ligne m'a appris l'improvisation, l'adaptabilité et la capacité à interagir avec un public.</p>
+                        <p>Je suis constamment à la recherche de nouvelles expériences pour enrichir ma palette de jeu. Discipliné, ponctuel et toujours prêt à relever des défis, je m'investis pleinement dans chaque rôle pour servir la vision du réalisateur.</p>
+                    </div>
+                </div>
+                <div class="hero-background-overlay"></div>
+            </section>
+             <section id="experiences" class="section-container">
+                <h2>Mes Expériences</h2>
+                <div class="experiences-grid">
+                    <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Figuration - "Le Grand Cirque"</h4>
+                                <p>Rôle d'un spectateur dans le long-métrage de Booder.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>Une excellente compréhension du fonctionnement d'un plateau de tournage et de la rigueur requise.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Théâtre - "Les Justes"</h4>
+                                <p>Rôle de Stepan Fedorov dans la pièce d'Albert Camus.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>Le développement de la présence scénique, la maîtrise du texte et l'interaction directe avec le public.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Statue Vivante - Festival des Arts</h4>
+                                <p>Performance de rue en tant que statue vivante.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>Une discipline corporelle extrême, la patience et l'art de capter l'attention sans un mot.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Publicité - "Vittel"</h4>
+                                <p>Figuration active dans un spot publicitaire pour la marque d'eau minérale.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>La rapidité d'exécution et l'adaptation aux contraintes techniques d'un tournage publicitaire.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>Court-métrage - "Le Dernier Mot"</h4>
+                                <p>Rôle secondaire dans un film étudiant, explorant un personnage complexe.</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Ce que ça m’a apporté</h5>
+                                <p>Une collaboration créative intense et la liberté d'expérimenter dans un cadre plus intimiste.</p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="experience-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h4>"Figuration dans le film Garance" </h4>
+                                <p>"Septembre 2025"</p>
+                            </div>
+                            <div class="card-back">
+                                <h5>Tournage à venir</h5>
+                                <p>"Sortie officiel: 2026"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="gallery" class="section-container">
+                <h2 class="gallery-title">Galerie Photos</h2>
+                
+                <div id="gallery-desktop" class="carousel-container carousel-desktop">
+                    <div class="carousel">
+                        <div class="carousel-item"><img src="1.jpg" alt="Photo 1"></div>
+                        <div class="carousel-item"><img src="2.jpg" alt="Photo 2"></div>
+                        <div class="carousel-item"><img src="3.jpg" alt="Photo 3"></div>
+                        <div class="carousel-item"><img src="4.jpg" alt="Photo 4"></div>
+                        <div class="carousel-item"><img src="5.jpg" alt="Photo 5"></div>
+                        <div class="carousel-item"><img src="6.jpg" alt="Photo 6"></div>
+                    </div>
+                    <button class="nav-button prev-button"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-button next-button"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-indicator">
+                        <span id="current-image-index-desktop">1</span> / 6
+                    </div>
+                </div>
+                
+                <div id="gallery-mobile" class="carousel-container carousel-mobile">
+                    <div class="carousel">
+                        <div class="carousel-item"><img src="1.jpg" alt="Photo 1"></div>
+                        <div class="carousel-item"><img src="2.jpg" alt="Photo 2"></div>
+                        <div class="carousel-item"><img src="3.jpg" alt="Photo 3"></div>
+                        <div class="carousel-item"><img src="4.jpg" alt="Photo 4"></div>
+                        <div class="carousel-item"><img src="5.jpg" alt="Photo 5"></div>
+                        <div class="carousel-item"><img src="6.jpg" alt="Photo 6"></div>
+                    </div>
+                    <button class="nav-button prev-button"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-button next-button"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-indicator">
+                        <span id="current-image-index-mobile">1</span> / 6
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section-container">
+                <h2>Contactez-moi</h2>
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <form action="https://formspree.io/f/xblkqabr" method="post">
+                            <div class="form-group">
+                                <label for="name">Nom</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="_replyto" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Envoyer</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Informations</h3>
+                        <p><strong>Adresse :</strong><br>78920 Ecquevilly</p>
+                        <p><strong>Email :</strong><br><a href="mailto:lorymarc.pro@gmail.com">lorymarc.pro@gmail.com</a></p>
+                        <p><strong>Téléphone :</strong><br><a href="tel:+33637943938">06 37 94 39 38</a></p>
+                        <a href="https://www.instagram.com/marc_comedien_figurant" target="_blank" class="icon-large">
+                          <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/marclory" target="_blank" class="icon-large">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-col footer-about">
+                    <a href="#" class="nav-logo footer-logo">Marc Lory</a>
+                    <p class="footer-copyright">&copy; 2025 Marc Lory. Tous droits réservés.</p>
+                </div>
+                <div class="footer-col footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#experiences">Expériences</a></li>
+                        <li><a href="#gallery-desktop">Galerie</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h3>Suivez-moi</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/marc_comedien_figurant" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/marclory" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <div class="style-switcher">
+        <div class="style-switcher-toggler">
+            <i class="fa fa-cog fa-spin"></i>
+        </div>
+        <h4>Thème du site</h4>
+        <div class="theme-buttons">
+            <span class="theme-btn light-mode active" onclick="setTheme('light')">Light</span>
+            <span class="theme-btn dark-mode" onclick="setTheme('dark')">Dark</span>
+        </div>
+        <h4>Couleurs du site</h4>
+        <div class="colors">
+            <div class="color-box color-1" data-color="#e8a93e"></div>
+            <div class="color-box color-2" data-color="#008000"></div>
+            <div class="color-box color-3" data-color="#c81b1b"></div>
+            <div class="color-box color-4" data-color="#ff6b00"></div>
+            <div class="color-box color-5" data-color="#0099ff"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
