@@ -1334,3 +1334,34 @@ input::placeholder {
   vertical-align: middle; 
   color: #999;
 }
+
+.carousel-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
+}
+
+.carousel-controls {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;              
+  justify-content: center;
+}
+
+.carousel-controls .nav-button {
+  position: static;       
+  background-color: #0ff;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 14px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.carousel-controls .nav-button:hover {
+  background-color: #fff;
+  color: #0ff;
+  transform: scale(1.1);
+}
