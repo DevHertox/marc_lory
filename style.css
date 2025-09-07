@@ -876,6 +876,16 @@ body.dark .card-back {
   text-decoration: underline;
 }
 
+.contact-info p strong {
+  color: #ccc;
+}
+
+.contact-info p span,
+.contact-info a {
+  color: var(--secondary-color);
+}
+
+
 .social-icons {
   display: flex;
   gap: 20px;
