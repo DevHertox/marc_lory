@@ -1316,6 +1316,7 @@ textarea {
   border: 1px solid #444;
   border-radius: 6px;
   padding: 0 12px;      
+    align-items: center;
 }
 
 .input-icon i {
@@ -1323,6 +1324,7 @@ textarea {
   font-size: 1rem;
   flex-shrink: 0;
   display: flex;
+    align-items: center;
 }
 
 .input-icon input,
@@ -1335,6 +1337,7 @@ textarea {
   font-size: 1rem;  
   resize: none;
   text-align: left;
+    align-items: center;
 }
 input::placeholder {
   vertical-align: middle; 
