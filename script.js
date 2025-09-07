@@ -5,14 +5,16 @@ window.addEventListener("load", () => {
 
     loader.style.opacity = 1;
     let fade = setInterval(() => {
-        if (loader.style.opacity > 0) {
-            loader.style.opacity -= 0.1;
+        let currentOpacity = parseFloat(loader.style.opacity);
+        if (currentOpacity > 0) {
+            loader.style.opacity = (currentOpacity - 0.1).toString();
         } else {
             clearInterval(fade);
             loader.style.display = "none";
             mainContent.classList.remove("hidden");
         }
     }, 60);
+
 });
 
 const cvDownloadBtn = document.getElementById('cv-download-btn');
