@@ -1315,7 +1315,7 @@ textarea {
   font-size: 1rem;
   flex-shrink: 0;
   display: flex;
-    align-items: center;
+  align-items: center;
 }
 
 .input-icon input,
@@ -1328,8 +1328,9 @@ textarea {
   font-size: 1rem;  
   resize: none;
   text-align: left;
-    align-items: center;
+align-items: center;
 }
+
 input::placeholder {
   vertical-align: middle; 
   color: #999;
