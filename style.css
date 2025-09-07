@@ -1,5 +1,4 @@
 :root {
-    /* Couleurs du mode clair */
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --background-color: #ecf0f1;
@@ -9,7 +8,6 @@
     --border-color: #ddd;
 }
 
-/* Couleurs du mode sombre */
 body.dark {
     --primary-color: #f5f6fa;
     --secondary-color: #e8a93e;
@@ -384,11 +382,6 @@ body.dark .navbar-scrolled {
     pointer-events: none; 
     overflow: hidden;
 }
-
-body {
-    padding-top: 100px;
-}
-
 .navbar-scrolled + .hero-about-section {
     padding-top: 80px;
 }
