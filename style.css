@@ -1324,3 +1324,29 @@ body.dark .footer-social a i {
 .input-icon textarea {
   padding-left: 45px; 
 }
+textarea {
+  resize: none;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center; 
+  gap: 8px;           
+}
+
+.input-icon i {
+  flex-shrink: 0;
+  color: #bbb;
+  font-size: 1rem;
+}
+
+.input-icon textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 120px; 
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+}
