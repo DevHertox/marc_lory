@@ -145,54 +145,6 @@ h2::after {
     border-radius: 2px;
 }
 
-.top-bar {
-    background-color: var(--primary-color); 
-    color: #f0f0f0;
-    padding: 0.7rem 5%;
-    font-size: 0.9rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1001; 
-    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-.top-bar-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.top-bar-social a, .top-bar-contact span {
-    color: #f0f0f0;
-    transition: color 0.3s ease;
-}
-/* Correction: Couleurs du texte du top-bar pour le mode sombre */
-body.dark .top-bar-social a, body.dark .top-bar-contact span {
-    color: #333; /* Couleur sombre sur fond clair */
-}
-
-.top-bar-social a {
-    margin-right: 15px;
-}
-
-.top-bar-social a:hover {
-    color: var(--secondary-color);
-}
-
-.top-bar-contact span {
-    margin-left: 25px;
-}
-
-.top-bar-contact .top-bar-item i {
-    margin-right: 8px;
-    color: var(--secondary-color);
-}
-
 .progress-bar {
     position: fixed;
     top: 0; 
