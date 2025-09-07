@@ -66,6 +66,9 @@
                         <p>Ancien streamer caritatif passionné par le contact humain et le storytelling, j'ai transformé mon amour pour la scène en une carrière de comédien et figurant. Mon expérience en ligne m'a appris l'improvisation, l'adaptabilité et la capacité à interagir avec un public.</p>
                         <p>Je suis constamment à la recherche de nouvelles expériences pour enrichir ma palette de jeu. Discipliné, ponctuel et toujours prêt à relever des défis, je m'investis pleinement dans chaque rôle pour servir la vision du réalisateur.</p>
                     </div>
+					<div class="scroll-down">
+					  <a href="#next-section"><i class="fas fa-chevron-down"></i></a>
+					</div>
                 </div>
                 <div class="hero-background-overlay"></div>
             </section>
@@ -273,6 +276,22 @@
             <div class="color-box color-5" data-color="#0099ff"></div>
         </div>
     </div>
+	<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
+	<script>
+	  const backToTop = document.getElementById("backToTop");
+	
+	  window.addEventListener("scroll", () => {
+	    if (window.scrollY > window.innerHeight) {
+	      backToTop.classList.add("show");
+	    } else {
+	      backToTop.classList.remove("show");
+	    }
+	  });
+	
+	  backToTop.addEventListener("click", () => {
+	    window.scrollTo({ top: 0, behavior: "smooth" });
+	  });
+	</script>
 </body>
 </html>
