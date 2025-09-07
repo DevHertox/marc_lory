@@ -111,6 +111,20 @@ h1, h2, h3, h4 {
 .hidden {
     opacity: 0;
 }
+.section-container,
+.hero-about-section,
+.experiences-grid .experience-card,
+.contact-content,
+.carousel-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 #main-content {
     transition: opacity 0.5s ease-in;
 }
