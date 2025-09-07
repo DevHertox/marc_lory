@@ -1340,4 +1340,19 @@ textarea {
   padding: 0 10px; 
 }
 
+.input-icon input,
+.input-icon textarea {
+  flex: 1;
+  height: 45px;         
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0 10px;
+  resize: none;       
+}
+
+
 
