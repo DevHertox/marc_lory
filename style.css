@@ -1349,6 +1349,7 @@ input::placeholder {
 }
 
 .carousel-controls .nav-button {
+  margin-top: 500px;
   position: static;       
   background-color: #fff;
   color: #000;
