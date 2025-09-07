@@ -1311,48 +1311,33 @@ textarea {
 
 .input-icon {
   display: flex;
-  align-items: flex-start;
+  align-items: center;   
   gap: 8px;
-  background: #1e1e1e;
+  background: #1a1a1a;
   border: 1px solid #444;
   border-radius: 6px;
-  padding: 10px;
+  padding: 0 12px;      
 }
 
+/* Icône */
 .input-icon i {
   color: #bbb;
   font-size: 1rem;
-  margin-top: 5px; 
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;  
 }
 
-.input-icon textarea {
-  flex: 1;
-  width: 100%;
-  min-height: 20px;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #fff;
-  font-family: inherit;
-  font-size: 1rem;
-
-  resize: none;
-  padding: 0 10px; 
-}
-
+/* Input + Textarea */
 .input-icon input,
 .input-icon textarea {
   flex: 1;
-  height: 45px;         
   border: none;
   outline: none;
   background: transparent;
   color: #fff;
   font-family: inherit;
   font-size: 1rem;
-  padding: 0 10px;
-  resize: none;       
+  padding: 12px 0;    
+  resize: none;
 }
-
-
-
