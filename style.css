@@ -1311,7 +1311,6 @@ textarea {
 
 .input-icon {
   display: flex;
-  align-items: center;   
   gap: 8px;
   background: #1a1a1a;
   border: 1px solid #444;
@@ -1324,7 +1323,6 @@ textarea {
   font-size: 1rem;
   flex-shrink: 0;
   display: flex;
-  align-items: center;   
 }
 
 .input-icon input,
@@ -1336,6 +1334,7 @@ textarea {
   font-family: inherit;
   font-size: 1rem;  
   resize: none;
+  text-align: left;
 }
 input::placeholder {
   vertical-align: middle; 
