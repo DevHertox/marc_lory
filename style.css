@@ -1350,7 +1350,7 @@ input::placeholder {
 
 .carousel-controls .nav-button {
   position: static;       
-  background-color: #0ff;
+  background-color: #fff;
   color: #000;
   border: none;
   border-radius: 50%;
@@ -1363,5 +1363,4 @@ input::placeholder {
 .carousel-controls .nav-button:hover {
   background-color: #fff;
   color: #0ff;
-  transform: scale(1.1);
 }
