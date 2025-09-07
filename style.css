@@ -219,7 +219,6 @@ body.dark .top-bar-social a, body.dark .top-bar-contact span {
     box-shadow: none;
     position: fixed;
     width: 100%;
-    top: 40px; 
     left: 0;
     z-index: 1000;
     transition: all 0.4s ease-in-out;
