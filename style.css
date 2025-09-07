@@ -765,8 +765,7 @@ text-area {
 .nav-button {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background: rgba(44, 62, 80, 0.7);
+    background-color: white;
     color: var(--card-bg);
     border: none;
     border-radius: 50%;
