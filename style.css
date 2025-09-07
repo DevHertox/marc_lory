@@ -1328,7 +1328,7 @@ textarea {
 .input-icon textarea {
   flex: 1;
   width: 100%;
-  min-height: 120px;
+  min-height: 20px;
   border: none;
   outline: none;
   background: transparent;
