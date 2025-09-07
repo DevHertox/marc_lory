@@ -216,3 +216,19 @@ function setActiveStyle(color) {
     }
     document.documentElement.style.setProperty('--secondary-color', newColor);
 }
+
+const animatables = document.querySelectorAll(
+  ".section-container, .hero-about-section, .experiences-grid .experience-card, .contact-content, .carousel-container"
+);
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.3 } 
+);
+animatables.forEach((el) => observer.observe(el));
