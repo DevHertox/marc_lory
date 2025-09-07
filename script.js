@@ -1,9 +1,11 @@
+// ==========================
 // Loader
+// ==========================
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
     const mainContent = document.getElementById("main-content");
 
-    loader.style.opacity = 1;
+    loader.style.opacity = "1";
     let fade = setInterval(() => {
         let currentOpacity = parseFloat(loader.style.opacity);
         if (currentOpacity > 0) {
@@ -14,9 +16,11 @@ window.addEventListener("load", () => {
             mainContent.classList.remove("hidden");
         }
     }, 60);
-
 });
 
+// ==========================
+// CV Download with Code
+// ==========================
 const cvDownloadBtn = document.getElementById('cv-download-btn');
 const popupOverlay = document.getElementById('popup-overlay');
 const cancelBtn = document.getElementById('cancel-btn');
@@ -36,23 +40,6 @@ function showToast(message, type = 'success') {
         toast.remove();
     }, 3000);
 }
-const animatables = document.querySelectorAll(
-  ".section-container, .hero-about-section, .experiences-grid .experience-card, .contact-content, .carousel-container"
-);
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.3 } 
-);
-
-animatables.forEach((el) => observer.observe(el));
-
 
 cvDownloadBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -92,7 +79,9 @@ function handleCodeSubmit() {
     }
 }
 
-// Hamburger menu
+// ==========================
+// Hamburger Menu
+// ==========================
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
@@ -106,7 +95,9 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
     navMenu.classList.remove("active");
 }));
 
-// Carousel Gallery JS
+// ==========================
+// Carousel Gallery
+// ==========================
 const carousel = document.querySelector('.carousel-container .carousel');
 const prevButton = document.querySelector('.carousel-container .prev-button');
 const nextButton = document.querySelector('.carousel-container .next-button');
@@ -150,17 +141,18 @@ nextButton.addEventListener('click', () => {
     }
 });
 
+// ==========================
+// Navbar scroll effect
+// ==========================
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     let lastScrollY = window.scrollY;
 
     window.addEventListener('scroll', () => {
         if (lastScrollY < window.scrollY) {
-
             navbar.classList.add('navbar-hidden');
             navbar.classList.remove('navbar-scrolled');
         } else {
-
             if (window.scrollY > 50) { 
                 navbar.classList.remove('navbar-hidden');
                 navbar.classList.add('navbar-scrolled');
@@ -172,6 +164,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// ==========================
+// Style Switcher
+// ==========================
 const styleSwitcher = document.querySelector('.style-switcher');
 const styleSwitcherToggler = document.querySelector('.style-switcher-toggler');
 
@@ -205,8 +200,6 @@ function setActiveStyle(color) {
         }
     });
     
-    document.documentElement.style.setProperty('--secondary-color', getComputedStyle(document.documentElement).getPropertyValue(`--${color}-color`));
-    
     let newColor;
     switch(color) {
         case 'color-1': newColor = '#e8a93e'; break;
@@ -219,6 +212,9 @@ function setActiveStyle(color) {
     document.documentElement.style.setProperty('--secondary-color', newColor);
 }
 
+// ==========================
+// Intersection Observer
+// ==========================
 const animatables = document.querySelectorAll(
   ".section-container, .hero-about-section, .experiences-grid .experience-card, .contact-content, .carousel-container"
 );
@@ -233,4 +229,5 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.3 } 
 );
+
 animatables.forEach((el) => observer.observe(el));
