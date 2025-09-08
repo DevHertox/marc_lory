@@ -1374,3 +1374,38 @@ textarea {
   background-color: #fff;
   color: #0ff;
 }
+
+@media (max-width: 768px) {
+  .carousel {
+    width: 220px;
+    height: 300px;
+  }
+
+  .carousel-item {
+    width: 220px;
+    height: 300px;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(400px);
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    width: 180px;
+    height: 240px;
+  }
+
+  .carousel-item {
+    width: 180px;
+    height: 240px;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(300px);
+  }
+
+  .carousel-controls {
+    gap: 10px;
+  }
+
+  .carousel-controls .nav-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
