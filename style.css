@@ -1361,6 +1361,15 @@ input::placeholder {
   transition: background-color 0.3s, transform 0.3s;
 }
 
+input::placeholder,
+textarea::placeholder {
+  text-align: left;  
+}
+
+input,
+textarea {
+  text-align: left; 
+}
 .carousel-controls .nav-button:hover {
   background-color: #fff;
   color: #0ff;
