@@ -1462,7 +1462,7 @@ textarea {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: black;
         color: white;
         border: none;
         border-radius: 50%;
@@ -1471,6 +1471,8 @@ textarea {
         font-size: 1.5rem;
         cursor: pointer;
         z-index: 10;
+        align-items: center;
+        justify-content: center;
     }
 
     .carousel-mobile .prev-button {
