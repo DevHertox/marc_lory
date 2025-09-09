@@ -1409,3 +1409,9 @@ textarea {
     font-size: 14px;
   }
 }
+@media (max-width: 768px) {
+  .carousel-container {
+    opacity: 1;
+    transform: none; 
+  }
+}
