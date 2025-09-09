@@ -1415,3 +1415,69 @@ textarea {
     transform: none; 
   }
 }
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .carousel-desktop {
+        display: none;
+    }
+
+    .carousel-mobile {
+        display: block;
+    }
+    
+    .carousel-mobile .carousel-container {
+        width: 100%;
+        height: 300px;
+        perspective: none;
+        overflow: hidden;
+    }
+
+    .carousel-mobile .carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        transform: none !important;
+    }
+
+    .carousel-mobile .carousel-item {
+        position: relative;
+        flex: 0 0 100%;
+        transform: none !important;
+        margin-right: 20px;
+        scroll-snap-align: start;
+    }
+
+    .carousel-mobile .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .carousel-mobile .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .carousel-mobile .prev-button {
+        left: 10px;
+    }
+
+    .carousel-mobile .next-button {
+        right: 10px;
+    }
+}
