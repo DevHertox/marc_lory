@@ -175,33 +175,45 @@
 			  </div>
 			</div>
 			<script>
-				document.addEventListener("DOMContentLoaded", () => {
-				  const gallery = document.querySelector("#mobile-gallery");
-				  const track = gallery.querySelector(".gallery-track");
-				  const items = track.querySelectorAll("img");
-				
-				  let index = 0;
-				  let autoScroll;
-				
-				  function startAutoScroll() {
-				    autoScroll = setInterval(() => {
-				      index = (index + 1) % items.length;
-				      items[index].scrollIntoView({ behavior: "smooth", inline: "center" });
-				    }, 3000); 
-				  }
-				
-				  function stopAutoScroll() {
-				    clearInterval(autoScroll);
-				  }
-				
-				  startAutoScroll();
-				
-				  gallery.addEventListener("touchstart", stopAutoScroll, { passive: true });
-				  gallery.addEventListener("mousedown", stopAutoScroll);
-				
-				  gallery.addEventListener("touchend", () => setTimeout(startAutoScroll, 5000));
-				  gallery.addEventListener("mouseup", () => setTimeout(startAutoScroll, 5000));
-				});
+					document.addEventListener("DOMContentLoaded", () => {
+					  const gallery = document.querySelector("#mobile-gallery");
+					  const track = gallery.querySelector(".gallery-track");
+					  const items = track.querySelectorAll("img");
+					
+					  let index = 0;
+					  let autoScroll;
+					
+					  function startAutoScroll() {
+					    if (window.innerWidth > 768) return; 
+					    autoScroll = setInterval(() => {
+					      index = (index + 1) % items.length;
+					      items[index].scrollIntoView({ behavior: "smooth", inline: "center" });
+					    }, 3000);
+					  }
+					
+					  function stopAutoScroll() {
+					    clearInterval(autoScroll);
+					  }
+					
+					  if (window.innerWidth <= 768) {
+					    startAutoScroll();
+					  }
+					
+					  gallery.addEventListener("touchstart", stopAutoScroll, { passive: true });
+					  gallery.addEventListener("mousedown", stopAutoScroll);
+					
+					  gallery.addEventListener("touchend", () => {
+					    if (window.innerWidth <= 768) setTimeout(startAutoScroll, 5000);
+					  });
+					  gallery.addEventListener("mouseup", () => {
+					    if (window.innerWidth <= 768) setTimeout(startAutoScroll, 5000);
+					  });
+					
+					  window.addEventListener("resize", () => {
+					    stopAutoScroll();
+					    if (window.innerWidth <= 768) startAutoScroll();
+					  });
+					});
 				</script>
 
 
