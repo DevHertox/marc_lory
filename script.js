@@ -232,6 +232,7 @@ const observer = new IntersectionObserver(
 
 animatables.forEach((el) => observer.observe(el));
 
+<script>
 const progressBars = document.querySelectorAll('.skill-progress');
 const skillCards = document.querySelectorAll('.skill-card');
 
@@ -245,7 +246,7 @@ function animateSkills() {
     setTimeout(() => {
       card.style.opacity = '1';
       card.style.transform = 'translateY(0)';
-    }, index * 150);
+    }, index * 150); 
   });
 }
 
@@ -257,4 +258,3 @@ window.addEventListener('scroll', () => {
     animateSkills();
   }
 });
-
