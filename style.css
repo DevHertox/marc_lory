@@ -1395,9 +1395,9 @@ textarea {
 
 @media (max-width: 768px) {
   #mobile-gallery {
-    display: flex; /* Visible seulement mobile */
+    display: flex;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     justify-content: center;
     scrollbar-width: none;
@@ -1414,19 +1414,19 @@ textarea {
   }
 
   #mobile-gallery img {
-    flex: 0 0 75%;             
-    max-width: 320px;           
-    max-height: 450px;        
+    flex: 0 0 75%;
+    max-width: 320px;
+    max-height: 450px;
     border-radius: 16px;
-    object-fit: cover;          
+    object-fit: cover;
     scroll-snap-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   #mobile-gallery img:active,
-  #mobile-gallery img:focus,
   #mobile-gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(0,0,0,0.25);
   }
 }
+
