@@ -164,46 +164,65 @@
 					  </div>
 				</div>
             </section>
-			<div id="mobile-gallery">
-			  <div class="gallery-track">
-			    <img src="1.jpg" alt="Photo 1">
-			    <img src="2.jpg" alt="Photo 2">
-			    <img src="3.jpg" alt="Photo 3">
-			    <img src="4.jpg" alt="Photo 4">
-				<img src="5.jpg" alt="Photo 3">
-			    <img src="6.jpg" alt="Photo 3">
-			  </div>
-			</div>
-			<script>
-				document.addEventListener("DOMContentLoaded", () => {
-				  const track = document.querySelector("#mobile-gallery .gallery-track");
-				  const items = Array.from(track.children);
-				
-				  const first = items[0].cloneNode(true);
-				  const last = items[items.length - 1].cloneNode(true);
-				
-				  track.insertBefore(last, items[0]); 
-				  track.appendChild(first);         
-				
-				  const allItems = track.querySelectorAll("img");
-				
-				  let index = 1;
-				  allItems[index].scrollIntoView({ inline: "center" });
-				
-				  track.addEventListener("scroll", () => {
-				    const current = Math.round(track.scrollLeft / track.offsetWidth);
-				
-				    if (track.scrollLeft === 0) {
-				      index = items.length;
-				      allItems[index].scrollIntoView({ behavior: "auto", inline: "center" });
-				    }
-				
-				    if (Math.ceil(track.scrollLeft + track.offsetWidth) >= track.scrollWidth) {
-				      index = 1;
-				      allItems[index].scrollIntoView({ behavior: "auto", inline: "center" });
-				    }
-				  });
-				});
+					<div id="mobile-gallery">
+					  <div class="gallery-track">
+					    <img src="1.jpg" alt="Photo 1">
+					    <img src="2.jpg" alt="Photo 2">
+					    <img src="3.jpg" alt="Photo 3">
+					    <img src="4.jpg" alt="Photo 4">
+						<img src="5.jpg" alt="Photo 3">
+					    <img src="6.jpg" alt="Photo 3">
+					  </div>
+					</div>
+					<div id="lightbox">
+					  <button class="close">&times;</button>
+					  <button class="prev">&#10094;</button>
+					  <img id="lightbox-img" src="" alt="Zoom">
+					  <button class="next">&#10095;</button>
+					</div>
+					<script>
+						document.addEventListener("DOMContentLoaded", () => {
+					  const track = document.querySelector("#mobile-gallery .gallery-track");
+					  const images = Array.from(track.querySelectorAll("img"));
+					  const lightbox = document.getElementById("lightbox");
+					  const lightboxImg = document.getElementById("lightbox-img");
+					  const closeBtn = lightbox.querySelector(".close");
+					  const prevBtn = lightbox.querySelector(".prev");
+					  const nextBtn = lightbox.querySelector(".next");
+					  let currentIndex = 0;
+					
+					  images.forEach((img, i) => {
+					    img.addEventListener("click", () => {
+					      currentIndex = i;
+					      showImage();
+					      lightbox.classList.add("active");
+					    });
+					  });
+					  function showImage() {
+					    lightboxImg.src = images[currentIndex].src;
+					  }
+					  nextBtn.addEventListener("click", () => {
+					    currentIndex = (currentIndex + 1) % images.length;
+					    showImage();
+					  });
+					  prevBtn.addEventListener("click", () => {
+					    currentIndex = (currentIndex - 1 + images.length) % images.length;
+					    showImage();
+					  });
+					  closeBtn.addEventListener("click", () => {
+					    lightbox.classList.remove("active");
+					  });
+					  lightbox.addEventListener("click", (e) => {
+					    if (e.target === lightbox) lightbox.classList.remove("active");
+					  });
+					  let startX = 0;
+					  lightboxImg.addEventListener("touchstart", e => startX = e.touches[0].clientX, { passive: true });
+					  lightboxImg.addEventListener("touchend", e => {
+					    const endX = e.changedTouches[0].clientX;
+					    if (endX - startX > 50) prevBtn.click();  
+					    if (startX - endX > 50) nextBtn.click();  
+					  });
+					});
 				</script>
 
             <section id="contact" class="section-container">
