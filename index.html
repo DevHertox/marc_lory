@@ -164,6 +164,46 @@
 					  </div>
 				</div>
             </section>
+			<div id="mobile-gallery">
+			  <div class="gallery-track">
+			    <img src="1.jpg" alt="Photo 1">
+			    <img src="2.jpg" alt="Photo 2">
+			    <img src="3.jpg" alt="Photo 3">
+			    <img src="4.jpg" alt="Photo 4">
+				<img src="5.jpg" alt="Photo 3">
+			    <img src="6.jpg" alt="Photo 3">
+			  </div>
+			</div>
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+				  const gallery = document.querySelector("#mobile-gallery");
+				  const track = gallery.querySelector(".gallery-track");
+				  const items = track.querySelectorAll("img");
+				
+				  let index = 0;
+				  let autoScroll;
+				
+				  function startAutoScroll() {
+				    autoScroll = setInterval(() => {
+				      index = (index + 1) % items.length;
+				      items[index].scrollIntoView({ behavior: "smooth", inline: "center" });
+				    }, 3000); 
+				  }
+				
+				  function stopAutoScroll() {
+				    clearInterval(autoScroll);
+				  }
+				
+				  startAutoScroll();
+				
+				  gallery.addEventListener("touchstart", stopAutoScroll, { passive: true });
+				  gallery.addEventListener("mousedown", stopAutoScroll);
+				
+				  gallery.addEventListener("touchend", () => setTimeout(startAutoScroll, 5000));
+				  gallery.addEventListener("mouseup", () => setTimeout(startAutoScroll, 5000));
+				});
+				</script>
+
 
             <section id="contact" class="section-container">
                 <h2>Contactez-moi</h2>
