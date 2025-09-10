@@ -174,48 +174,6 @@
 			    <img src="6.jpg" alt="Photo 3">
 			  </div>
 			</div>
-			<script>
-					document.addEventListener("DOMContentLoaded", () => {
-					  const gallery = document.querySelector("#mobile-gallery");
-					  const track = gallery.querySelector(".gallery-track");
-					  const items = track.querySelectorAll("img");
-					
-					  let index = 0;
-					  let autoScroll;
-					
-					  function startAutoScroll() {
-					    if (window.innerWidth > 768) return; 
-					    autoScroll = setInterval(() => {
-					      index = (index + 1) % items.length;
-					      items[index].scrollIntoView({ behavior: "smooth", inline: "center" });
-					    }, 3000);
-					  }
-					
-					  function stopAutoScroll() {
-					    clearInterval(autoScroll);
-					  }
-					
-					  if (window.innerWidth <= 768) {
-					    startAutoScroll();
-					  }
-					
-					  gallery.addEventListener("touchstart", stopAutoScroll, { passive: true });
-					  gallery.addEventListener("mousedown", stopAutoScroll);
-					
-					  gallery.addEventListener("touchend", () => {
-					    if (window.innerWidth <= 768) setTimeout(startAutoScroll, 5000);
-					  });
-					  gallery.addEventListener("mouseup", () => {
-					    if (window.innerWidth <= 768) setTimeout(startAutoScroll, 5000);
-					  });
-					
-					  window.addEventListener("resize", () => {
-					    stopAutoScroll();
-					    if (window.innerWidth <= 768) startAutoScroll();
-					  });
-					});
-				</script>
-
 
             <section id="contact" class="section-container">
                 <h2>Contactez-moi</h2>
