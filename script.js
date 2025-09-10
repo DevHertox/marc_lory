@@ -231,3 +231,21 @@ const observer = new IntersectionObserver(
 );
 
 animatables.forEach((el) => observer.observe(el));
+
+const progressBars = document.querySelectorAll('.skill-progress');
+
+function animateSkills() {
+  progressBars.forEach(bar => {
+    const value = bar.getAttribute('data-progress');
+    bar.style.width = value + '%';
+  });
+}
+
+window.addEventListener('scroll', () => {
+  const skillsSection = document.querySelector('.skills-section');
+  const sectionPos = skillsSection.getBoundingClientRect().top;
+  const screenPos = window.innerHeight / 1.2;
+  if(sectionPos < screenPos) {
+    animateSkills();
+  }
+});
