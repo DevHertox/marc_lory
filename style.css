@@ -177,6 +177,7 @@ h2::after {
     box-shadow: none;
     position: fixed;      
     top: 0;
+    padding: 0.7rem 5%;
     left: 0;
     width: 100%;
     z-index: 1000;        
