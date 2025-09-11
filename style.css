@@ -765,8 +765,8 @@ text-area {
 .nav-button {
     position: absolute;
     top: 50%;
-    background-color: white;
-    color: var(--card-bg);
+    background-color: #000;
+    color: white;
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -775,10 +775,6 @@ text-area {
     cursor: pointer;
     z-index: 10;
     transition: background-color 0.3s;
-}
-
-.nav-button:hover {
-    background: var(--secondary-color);
 }
 
 .prev-button {
@@ -938,7 +934,6 @@ text-area {
     margin-top: 15px;
 }
 
-/* 4. Couleurs du pied de page pour le mode sombre */
 footer {
     background-color: var(--primary-color);
     color: #fff;
