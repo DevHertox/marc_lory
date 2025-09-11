@@ -1537,3 +1537,8 @@ text-align: left;
 textarea {
 text-align: left;
 }
+
+.nav-button {
+background-color: #000;
+color: #fff;
+}
