@@ -809,6 +809,7 @@ text-area {
   padding: 3rem;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  margin-top: 2rem;
 }
 
 .contact-form-container h2 {
