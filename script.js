@@ -211,3 +211,26 @@ function setActiveStyle(color) {
     }
     document.documentElement.style.setProperty('--secondary-color', newColor);
 }
+
+const track = document.querySelector("#mobile-gallery .gallery-track");
+let imgs = track.querySelectorAll("img");
+
+const first = imgs[0].cloneNode(true);
+const last = imgs[imgs.length - 1].cloneNode(true);
+
+track.appendChild(first);      
+track.insertBefore(last, imgs[0]); 
+
+track.scrollLeft = imgs[0].offsetWidth + 12; 
+
+track.addEventListener("scroll", () => {
+  const itemWidth = imgs[0].offsetWidth + 12;
+  const maxScroll = (imgs.length) * itemWidth;
+
+  if (track.scrollLeft <= 0) {
+    track.scrollLeft = (imgs.length - 1) * itemWidth;
+  } 
+  else if (track.scrollLeft >= maxScroll) {
+    track.scrollLeft = itemWidth;
+  }
+});
