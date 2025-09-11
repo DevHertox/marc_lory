@@ -212,49 +212,20 @@ function setActiveStyle(color) {
     document.documentElement.style.setProperty('--secondary-color', newColor);
 }
 
-// ==========================
-// Intersection Observer
-// ==========================
-const animatables = document.querySelectorAll(
-  ".section-container, .hero-about-section, .experiences-grid .experience-card, .contact-content, .carousel-container"
-);
+const skillsSection = document.querySelector("#skills");
+const skillBars = document.querySelectorAll(".skill-card");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.3 } 
-);
-
-animatables.forEach((el) => observer.observe(el));
-
-<script>
-const progressBars = document.querySelectorAll('.skill-progress');
-const skillCards = document.querySelectorAll('.skill-card');
-
-function animateSkills() {
-  progressBars.forEach(bar => {
-    const value = bar.getAttribute('data-progress');
-    bar.style.width = value + '%';
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      skillBars.forEach(card => {
+        let level = card.getAttribute("data-level");
+        let span = card.querySelector(".progress-bar span");
+        span.style.width = level + "%";
+      });
+      observer.disconnect(); 
+    }
   });
+}, { threshold: 0.3 });
 
-  skillCards.forEach((card, index) => {
-    setTimeout(() => {
-      card.style.opacity = '1';
-      card.style.transform = 'translateY(0)';
-    }, index * 150); 
-  });
-}
-
-window.addEventListener('scroll', () => {
-  const skillsSection = document.querySelector('.skills-section');
-  const sectionPos = skillsSection.getBoundingClientRect().top;
-  const screenPos = window.innerHeight / 1.2;
-  if(sectionPos < screenPos) {
-    animateSkills();
-  }
-});
+observer.observe(skillsSection);
