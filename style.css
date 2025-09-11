@@ -914,6 +914,7 @@ text-area {
   margin-right: auto;
 }
 
+
 .icon-large {
   font-size: 2rem;
   color: var(--primary-color);
@@ -995,7 +996,6 @@ body.dark .footer-social a i {
 .social-icons a {
     color: #fff;
     font-size: 2rem;
-    margin-right: 1.5rem;
     transition: color 0.3s ease;
 }
 
