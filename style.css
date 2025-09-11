@@ -611,7 +611,7 @@ input {
 }
 
 .card-front {
-    color: var(--text-color);
+    color: white;
     background-blend-mode: overlay;
     background-color: transparent;
     display: flex;
@@ -630,9 +630,8 @@ input {
     margin-bottom: 0.5rem;
 }
 
-/* 7. Styles de la face arrière des cartes */
 .card-back {
-    color: #fff; /* Changement de la couleur du texte en blanc */
+    color: #fff;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
