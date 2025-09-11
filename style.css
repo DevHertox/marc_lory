@@ -765,7 +765,6 @@ text-area {
 .nav-button {
     position: absolute;
     top: 50%;
-    background-color: #000;
     color: white; 
     border: none;
     border-radius: 50%;
@@ -774,7 +773,6 @@ text-area {
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 10;
-    transition: background-color 0.3s;
 }
 
 .prev-button {
@@ -1113,10 +1111,9 @@ body.dark .footer-social a i {
 }
 
 .carousel-container .nav-button {
-  position: static;
+  position: static; 
   display: inline-block;
   margin: 10px 5px 0;
-  background-color: #0ff; 
   color: #000;
   border: none;
   border-radius: 50%;
@@ -1126,9 +1123,7 @@ body.dark .footer-social a i {
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.carousel-container .nav-button:hover {
-  background-color: #fff;
-  color: #0ff;
+.carousel-container .nav-button:hover 
   transform: scale(1.1);
 }
 
@@ -1137,11 +1132,9 @@ body.dark .footer-social a i {
   margin-top: 10px;
 }
 
-
-/* 1. Mettre le sélecteur de style sur le côté gauche */
 .style-switcher {
     position: fixed;
-    top: 200px; /* Abaissé à 200px */
+    top: 200px; 
     left: 0; 
     background-color: #1a1a1a;
     width: 200px;
@@ -1536,9 +1529,4 @@ text-align: left;
 }
 textarea {
 text-align: left;
-}
-
-.nav-button {
-background-color: #000;
-color: #fff;
 }
