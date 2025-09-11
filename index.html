@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="dark">
 	<!-- Google Tag Manager (noscript) -->
@@ -68,7 +69,7 @@
         </header>
 
         <main>
-            <section id="hero-about" class="hero-about-section">
+            <section id="hero-about" class="hero-about-section fade-up">
                 <div class="hero-content">
                     <div class="animated-text-container">
                         <h1 class="animated-text">Marc Lory</h1>
@@ -81,7 +82,7 @@
                 </div>
                 <div class="hero-background-overlay"></div>
             </section>
-			<section class="skills" id="skills">
+			<section class="skills fade-up" id="skills">
 			  <h2>Compétences</h2>
 			  <div class="skills-grid">
 			    <div class="skill-card" data-level="90">
@@ -245,7 +246,7 @@
 			
 			observer.observe(skillsSection);
 			</script>
-             <section id="experiences" class="section-container">
+             <section id="experiences" class="section-container fade-up">
                 <h2>Mes Expériences</h2>
                 <div class="experiences-grid">
 					<div class="experience-card">
@@ -322,7 +323,7 @@
                     </div>
                 </div>
             </section>
-            <section id="gallery" class="section-container">
+            <section id="gallery" class="fade-up section-container">
                 <h2 class="gallery-title">Galerie Photos</h2>
                 
                 <div id="gallery-desktop" class="carousel-container carousel-desktop">
@@ -340,7 +341,7 @@
 					  </div>
 				</div>
             </section>
-					<div id="mobile-gallery">
+					<div id="mobile-gallery fade-up">
 					  <div class="gallery-track">
 					    <img src="1.jpg" alt="Photo 1">
 					    <img src="2.jpg" alt="Photo 2">
@@ -401,7 +402,7 @@
 					});
 				</script>
 
-            <section id="contact" class="section-container">
+            <section id="contact" class="section-container fade-up">
                 <h2>Contactez-moi</h2>
                 <div class="contact-content">
 				  <div class="contact-form-container">
@@ -455,7 +456,7 @@
         </main>
 
         <footer>
-            <div class="footer-container">
+            <div class="footer-container fade-up">
                 <div class="footer-col footer-about">
                     <a href="#" class="nav-logo footer-logo">Marc Lory</a>
                     <p class="footer-copyright">&copy; 2025 Marc Lory. Tous droits réservés.</p>
@@ -475,7 +476,7 @@
                     <h3>Suivez-moi</h3>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/marc_comedien_figurant" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/marclory" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/marc-l-938655214" target="_blank"><i class="fab fa-linkedin"></i></a>
 						<a href="https://www.facebook.com/profile.php?id=61580467983605" target="_blank" class="icon-large">
 				        <i class="fab fa-facebook"></i>
 				      </a> 
@@ -538,6 +539,12 @@
 
 
 	</script>
-	
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init({
+		  duration: 1000,
+		  once: true
+		});
+	</script> 
 </body>
 </html>
