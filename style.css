@@ -1530,3 +1530,7 @@ text-align: left;
 textarea {
 text-align: left;
 }
+
+.carousel-container .nav-button {
+background: none;
+}
