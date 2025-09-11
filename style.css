@@ -1108,6 +1108,11 @@ body.dark .footer-social a i {
     .carousel-item img {
         height: auto; 
     }
+    .social-icons {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
 }
 
 .carousel-container {
