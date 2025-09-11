@@ -1526,3 +1526,8 @@ textarea {
   border-radius: 10px;
   transition: width 1.5s ease-in-out;
 }
+
+#message {
+text-align: left;
+}
+
