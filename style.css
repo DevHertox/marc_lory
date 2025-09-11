@@ -735,8 +735,8 @@ body.dark .card-back {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: #0ff; 
-  color: #000;
+  background: none;
+  color: #fff;
   border: none;
   padding: 12px 16px;
   border-radius: 50%;
@@ -755,16 +755,13 @@ body.dark .card-back {
 }
 
 #backToTop:hover {
-  background-color: #fff;
-  color: #0ff;
+  color: #fff;
   transform: translateY(-4px);
 }
-
 
 text-area {
     resize: none;
 }
-
 
 .nav-button {
     position: absolute;
