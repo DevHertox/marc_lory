@@ -211,21 +211,3 @@ function setActiveStyle(color) {
     }
     document.documentElement.style.setProperty('--secondary-color', newColor);
 }
-
-const skillsSection = document.querySelector("#skills");
-const skillBars = document.querySelectorAll(".skill-card");
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      skillBars.forEach(card => {
-        let level = card.getAttribute("data-level");
-        let span = card.querySelector(".progress-bar span");
-        span.style.width = level + "%";
-      });
-      observer.disconnect(); 
-    }
-  });
-}, { threshold: 0.3 });
-
-observer.observe(skillsSection);
