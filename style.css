@@ -638,11 +638,11 @@ input {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #34495e; /* Ajout d'une couleur de fond */
+    background-color: #34495e; 
 }
 
 body.dark .card-back {
-    background-color: #4a4a4a; /* Changement du fond en mode sombre */
+    background-color: #4a4a4a; 
 }
 
 .card-back h5 {
@@ -669,7 +669,7 @@ body.dark .card-back {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 9,5rem;
+    margin-bottom: 8rem;
     margin-top: 8rem; 
 }
 
