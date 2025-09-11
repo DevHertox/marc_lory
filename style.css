@@ -207,6 +207,7 @@ body.dark .navbar-scrolled {
     color: var(--primary-color);
     text-decoration: none;
     transition: font-size 0.4s ease;
+
 }
 
 .navbar-scrolled .nav-logo {
@@ -250,7 +251,7 @@ body.dark .navbar-scrolled {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-right: 5px;
+    margin-right: 10px; 
 }
 
 .btn:hover {
@@ -1330,6 +1331,10 @@ textarea {
     width: 220px;
     height: 300px;
     transform: rotateY(calc(var(--i) * 60deg)) translateZ(400px);
+  }
+
+  .nav-logo {
+    max-width: 75px
   }
 }
 
