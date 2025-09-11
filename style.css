@@ -573,6 +573,7 @@ input {
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    color: #fff;
 }
 
 .experience-card:hover {
