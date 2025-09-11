@@ -748,6 +748,10 @@ body.dark .card-back {
   z-index: 1000;
 }
 
+body.dark #backToTop {
+  color: #000;
+}
+
 #backToTop.show {
   opacity: 1;
   pointer-events: auto;
