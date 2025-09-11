@@ -921,12 +921,6 @@ text-area {
   transform: scale(1.1);
 }
 
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
-
 footer {
     background-color: var(--primary-color);
     color: #fff;
