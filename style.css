@@ -766,7 +766,7 @@ text-area {
     position: absolute;
     top: 50%;
     background-color: #000;
-    color: white;
+    color: white; 
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -783,15 +783,6 @@ text-area {
 
 .next-button {
     right: 20px;
-}
-
-.carousel-indicator {
-    position: absolute;
-    bottom: -30px;
-    color: var(--card-bg);
-    font-size: 1rem;
-    font-weight: bold;
-    text-shadow: var(--primary-color) 2px 3px;
 }
 
 .gallery-title {
@@ -1114,13 +1105,6 @@ body.dark .footer-social a i {
     
     .carousel-item img {
         height: auto; 
-    }
-
-    .nav-button {
-        z-index: 100;
-        background-color: transparent;
-        color: var(--primary-color);
-        font-size: 2.5rem;
     }
 }
 
