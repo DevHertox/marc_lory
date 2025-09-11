@@ -19,7 +19,7 @@
 
     <div id="main-content" class="hidden">
 
-        <header>
+        <header> 
             <nav class="navbar">
                 <a href="#hero-about" class="nav-logo">Marc Lory</a>
                 <ul class="nav-menu">
@@ -70,111 +70,167 @@
 			<section class="skills" id="skills">
 			  <h2>Compétences</h2>
 			  <div class="skills-grid">
-			    <div class="skill-card" data-level="85">
+			    <div class="skill-card" data-level="90">
+			      <i class="fas fa-theater-masks"></i>
 			      <h3>Jeu d’acteur</h3>
-			      <div class="progress-bar"><span></span></div>
+			      <div class="progress-container">
+			        <div class="progress-bar"><span></span></div>
+			        <span class="percent">90%</span>
+			      </div>
 			    </div>
-			    <div class="skill-card" data-level="70">
-			      <h3>Expression scénique</h3>
-			      <div class="progress-bar"><span></span></div>
+			    <div class="skill-card" data-level="95">
+			      <i class="fas fa-chalkboard-user"></i>
+			      <h3>Ponctualité</h3>
+			      <div class="progress-container">
+			        <div class="progress-bar"><span></span></div>
+			        <span class="percent">95%</span>
+			      </div>
 			    </div>
 			    <div class="skill-card" data-level="60">
+			      <i class="fas fa-microphone"></i>
 			      <h3>Doublage / Voix-off</h3>
-			      <div class="progress-bar"><span></span></div>
+			      <div class="progress-container">
+			        <div class="progress-bar"><span></span></div>
+			        <span class="percent">60%</span>
+			      </div>
 			    </div>
-			    <div class="skill-card" data-level="75">
-			      <h3>Communication</h3>
-			      <div class="progress-bar"><span></span></div>
+			    <div class="skill-card" data-level="85">
+			      <i class="fas fa-comments"></i>
+			      <h3>Polyvalence</h3>
+			      <div class="progress-container">
+			        <div class="progress-bar"><span></span></div>
+			        <span class="percent">85%</span>
+			      </div>
 			    </div>
-			    <div class="skill-card" data-level="65">
+			    <div class="skill-card" data-level="70">
+			      <i class="fas fa-lightbulb"></i>
 			      <h3>Improvisation</h3>
-			      <div class="progress-bar"><span></span></div>
+			      <div class="progress-container">
+			        <div class="progress-bar"><span></span></div>
+			        <span class="percent">70%</span>
+			      </div>
 			    </div>
-			    <div class="skill-card" data-level="50">
+			    <div class="skill-card" data-level="90">
+			      <i class="fas fa-video"></i>
 			      <h3>Création de contenu</h3>
-			      <div class="progress-bar"><span></span></div>
+			      <div class="progress-container">
+			        <div class="progress-bar"><span></span></div>
+			        <span class="percent">90%</span>
+			      </div>
 			    </div>
 			  </div>
 			</section>
-
-	<style>
-	.skills {
-	  padding: 4rem 2rem;
-	  text-align: center;
-	  background: var(--card-bg);
-	}
-	
-	.skills h2 {
-	  font-size: 2.5rem;
-	  margin-bottom: 3rem;
-	  color: var(--text-color);
-	}
-	
-	.skills-grid {
-	  display: grid;
-	  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	  gap: 2rem;
-	  max-width: 1200px;
-	  margin: auto;
-	}
-	
-	.skill-card {
-	  background: var(--background-color);
-	  border-radius: 15px;
-	  padding: 2rem;
-	  box-shadow: var(--shadow);
-	  text-align: left;
-	  transition: transform 0.3s ease;
-	}
-	
-	.skill-card:hover {
-	  transform: translateY(-8px);
-	}
-	
-	.skill-card h3 {
-	  margin-bottom: 1rem;
-	  font-size: 1.3rem;
-	  color: var(--text-color);
-	}
-	
-	.progress-bar {
-	  position: relative;
-	  height: 12px;
-	  width: 100%;
-	  background: #333;
-	  border-radius: 10px;
-	  overflow: hidden;
-	}
-	
-	.progress-bar span {
-	  display: block;
-	  height: 100%;
-	  width: 0; 
-	  background: #d4af37; 
-	  border-radius: 10px;
-	  transition: width 1.8s ease;
-	}
-	</style>
-	
-	<script>
-	const skillsSection = document.querySelector("#skills");
-	const skillBars = document.querySelectorAll(".skill-card");
-	
-	const observer = new IntersectionObserver((entries) => {
-	  entries.forEach(entry => {
-	    if (entry.isIntersecting) {
-	      skillBars.forEach(card => {
-	        let level = card.getAttribute("data-level");
-	        let span = card.querySelector(".progress-bar span");
-	        span.style.width = level + "%";
-	      });
-	      observer.disconnect(); 
-	    }
-	  });
-	}, { threshold: 0.3 });
-	
-	observer.observe(skillsSection);
-	</script>
+			
+			<style>
+			.skills {
+			  padding: 4rem 2rem;
+			  text-align: center;
+			  background: var(--card-bg);
+			}
+			
+			.skills h2 {
+			  font-size: 2.5rem;
+			  margin-bottom: 3rem;
+			  color: var(--text-color);
+			}
+			
+			.skills-grid {
+			  display: grid;
+			  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			  gap: 2rem;
+			  max-width: 1200px;
+			  margin: auto;
+			}
+			
+			.skill-card {
+			  background: var(--background-color);
+			  border-radius: 15px;
+			  padding: 2rem;
+			  box-shadow: var(--shadow);
+			  text-align: left;
+			  transition: transform 0.3s ease;
+			}
+			
+			.skill-card:hover {
+			  transform: translateY(-8px);
+			}
+			
+			.skill-card i {
+			  font-size: 2rem;
+			  color: #d4af37; 
+			  margin-bottom: 0.5rem;
+			}
+			
+			.skill-card h3 {
+			  margin-bottom: 1rem;
+			  font-size: 1.3rem;
+			  color: var(--text-color);
+			}
+			
+			.progress-container {
+			  display: flex;
+			  align-items: center;
+			  gap: 0.8rem;
+			}
+			
+			.progress-bar {
+			  position: relative;
+			  height: 12px;
+			  flex: 1;
+			  background: #333;
+			  border-radius: 10px;
+			  overflow: hidden;
+			}
+			
+			.progress-bar span {
+			  display: block;
+			  height: 100%;
+			  width: 0;
+			  background: #d4af37; 
+			  border-radius: 10px;
+			  transition: width 1.8s ease;
+			}
+			
+			.percent {
+			  font-size: 0.9rem;
+			  font-weight: bold;
+			  color: var(--text-color);
+			  min-width: 35px;
+			  text-align: right;
+			}
+			</style>
+			
+			<script>
+			const skillsSection = document.querySelector("#skills");
+			const skillCards = document.querySelectorAll(".skill-card");
+			
+			const observer = new IntersectionObserver((entries) => {
+			  entries.forEach(entry => {
+			    if (entry.isIntersecting) {
+			      skillCards.forEach(card => {
+			        let level = card.getAttribute("data-level");
+			        let span = card.querySelector(".progress-bar span");
+			        let percentText = card.querySelector(".percent");
+			
+			        span.style.width = level + "%";
+			
+			        let counter = 0;
+			        let interval = setInterval(() => {
+			          if (counter >= level) {
+			            clearInterval(interval);
+			          } else {
+			            counter++;
+			            percentText.textContent = counter + "%";
+			          }
+			        }, 20);
+			      });
+			      observer.disconnect(); 
+			    }
+			  });
+			}, { threshold: 0.3 });
+			
+			observer.observe(skillsSection);
+			</script>
              <section id="experiences" class="section-container">
                 <h2>Mes Expériences</h2>
                 <div class="experiences-grid">
@@ -185,8 +241,8 @@
                                 <p>"Septembre 2025"</p>
                             </div>
                             <div class="card-back">
-                                <h5>Tournage à venir</h5>
-                                <p>"Sortie officiel: 2026"</p>
+                                <h5>ce que ça m'a apporté</h5>
+                                <p>J'ai pu rencontrer du monde et développer un réseau. J'ai également pu entrevoir les coulisses d'un tournage et son déroulement. </p>
                             </div>
                         </div>
                     </div>
