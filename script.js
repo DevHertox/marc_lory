@@ -28,7 +28,7 @@ const submitBtn = document.getElementById('submit-code');
 const codeInput = document.getElementById('code-input');
 const toastContainer = document.getElementById('toast-container');
 
-const correctCode = 'CV29';
+const correctCode = 'CV25';
 
 function showToast(message, type = 'success') {
     const toast = document.createElement('div');
