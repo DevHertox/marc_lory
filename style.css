@@ -1490,6 +1490,11 @@ border-radius: 6px;
   }
 }
 
+.social-icons i#facebook {
+margin: 0; 
+display: none;
+}
+
 .skills-section {
   padding: 5rem 2rem;
   background: #111; 
