@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lory-marc.fr/sitemap.xml
