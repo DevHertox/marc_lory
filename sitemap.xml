@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Page principale -->
   <url>
     <loc>https://lory-marc.fr/</loc>
-    <lastmod>2025-10-05</lastmod>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://lory-marc.fr/logo.webp</image:loc>
+      <image:title>Marc Lory – Comédien & Figurant</image:title>
+    </image:image>
   </url>
+
+  <!-- Galerie -->
+  <url>
+    <loc>https://lory-marc.fr/#gallery</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://lory-marc.fr/1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://lory-marc.fr/2.jpg</image:loc></image:image>
+    <image:image><image:loc>https://lory-marc.fr/3.jpg</image:loc></image:image>
+    <image:image><image:loc>https://lory-marc.fr/4.jpg</image:loc></image:image>
+    <image:image><image:loc>https://lory-marc.fr/5.jpg</image:loc></image:image>
+    <image:image><image:loc>https://lory-marc.fr/6.jpg</image:loc></image:image>
+  </url>
+
+  <!-- Politique de confidentialité -->
+  <url>
+    <loc>https://lory-marc.fr/privacy.html</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Conditions générales -->
+  <url>
+    <loc>https://lory-marc.fr/conditions.html</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
