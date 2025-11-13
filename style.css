@@ -1008,6 +1008,7 @@ body.dark .footer-social a i {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  margin-bottom: -400px;
 }
 
 .bande-demo-title {
