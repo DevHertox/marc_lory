@@ -1087,9 +1087,12 @@ body.dark .footer-social a i {
 }
 
 .bande-demo-large {
-  display: flex;
   width: 50%;
   aspect-ratio: 2.39 / 1;
+}
+
+.bande-demo-mid-container{
+    display: flex;
 }
 
 .miditem1 {
