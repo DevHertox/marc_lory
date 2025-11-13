@@ -1702,3 +1702,18 @@ background: none;
 .cpgu-link a {
 color: #e8a93e;
 }
+
+
+.bande-demo-mid-container {
+  display: flex;
+  flex-direction: row;
+  width: 40%; 
+  aspect-ratio: 2 / 1;
+  gap: 10px;
+}
+
+.miditem1, .miditem2 {
+  width: 50%;
+  height: 100%;
+  aspect-ratio: auto;
+}
