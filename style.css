@@ -558,6 +558,7 @@ input {
 
 #experiences {
     padding-top: 8rem;
+    margin-top: -1rem;
 }
 
 .experiences-grid {
