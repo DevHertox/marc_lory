@@ -999,6 +999,121 @@ body.dark .footer-social a i {
     transition: color 0.3s ease;
 }
 
+.bande-demo-section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 100px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bande-demo-title {
+  font-size: 2.2rem;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.bande-demo-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bande-demo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #000;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.bande-demo-item:hover {
+  transform: scale(1.02);
+}
+
+.bande-demo-thumb,
+.bande-demo-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.5s ease;
+}
+
+.bande-demo-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bande-demo-item:hover .bande-demo-video {
+  opacity: 1;
+}
+
+.bande-demo-item:hover .bande-demo-thumb {
+  opacity: 0;
+}
+
+.bande-demo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.bande-demo-item:hover .bande-demo-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bande-demo-large {
+  width: 50%;
+  aspect-ratio: 2.39 / 1;
+}
+
+.bande-demo-medium {
+  width: 25%;
+  aspect-ratio: 2 / 1;
+}
+
+.bande-demo-vertical {
+  width: 20%;
+  aspect-ratio: 9 / 16;
+}
+
+@media (max-width: 1000px) {
+  .bande-demo-large {
+    width: 100%;
+  }
+  .bande-demo-medium, .bande-demo-vertical {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 700px) {
+  .bande-demo-medium, .bande-demo-vertical {
+    width: 100%;
+  }
+}
+
 .social-icons a:hover {
     color: var(--secondary-color);
 }
@@ -1130,7 +1245,7 @@ body.dark .footer-social a i {
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.carousel-container .nav-button:hover 
+.carousel-container .nav-button:hover {
   transform: scale(1.1);
 }
 

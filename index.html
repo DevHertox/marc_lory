@@ -274,6 +274,41 @@
 			
 			observer.observe(skillsSection);
 			</script>
+			<section class="bande-demo-section">
+				<h2 class="bande-demo-title">Bande Démo</h2>
+				<div class="bande-demo-container">
+					<div class="bande-demo-item bande-demo-large" data-video="media/warner.mp4" data-image="media/warner.jpg">
+					<div class="bande-demo-overlay">Collaboration avec Warner Bros</div>
+					<img src="media/warner.jpg" alt="Warner Bros" class="bande-demo-thumb" />
+					<video src="media/warner.mp4" class="bande-demo-video" muted loop></video>
+					</div>
+
+					<div class="bande-demo-item bande-demo-medium" data-video="media/demo2.mp4" data-image="media/demo2.jpg">
+					<div class="bande-demo-overlay">Nouveau court-métrage papi</div>
+					<img src="media/demo2.jpg" alt="Nouveau projet" class="bande-demo-thumb" />
+					<video src="media/demo2.mp4" class="bande-demo-video" muted loop></video>
+					</div>
+
+					<div class="bande-demo-item bande-demo-vertical" data-video="media/demo3.mp4" data-image="media/demo3.jpg">
+					<div class="bande-demo-overlay">Format Insta/vertical</div>
+					<img src="media/demo3.jpg" alt="Projet Instagram" class="bande-demo-thumb" />
+					<video src="media/demo3.mp4" class="bande-demo-video" muted loop></video>
+					</div>
+				</div>
+			</section>
+			<script>
+				document.querySelectorAll('.bande-demo-item').forEach(item => {
+				const video = item.querySelector('.bande-demo-video');
+				item.addEventListener('mouseenter', () => {
+					video.currentTime = 0;
+					video.play();
+				});
+				item.addEventListener('mouseleave', () => {
+					video.pause();
+				});
+				});
+			</script>
+
              <section id="experiences" class="section-container" data-aos="fade-up">
                 <h2>Mes Expériences</h2>
                 <div class="experiences-grid">
