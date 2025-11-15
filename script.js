@@ -177,6 +177,13 @@ function setTheme(theme) {
     }
 }
 
+const styleSwitcher = document.querySelector(".style-switcher");
+const toggler = document.querySelector(".style-switcher-toggler");
+
+toggler.addEventListener("click", () => {
+    styleSwitcher.classList.toggle("open");
+});
+
 
 // ==========================
 // Gallery
