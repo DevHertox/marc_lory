@@ -1719,89 +1719,167 @@ color: #e8a93e;
 }
 
 
+/* Dark = default theme */
 :root {
---primary-bg: #ffffff;
---primary-text: #111111;
---secondary-color: #4a6cff;
---card-bg: #f7f7f7;
---card-border: #e3e3e3;
---shadow-soft: 0 4px 14px rgba(0,0,0,0.08);
+  --primary-bg: #000000;
+  --primary-text: #ffffff;
+  --secondary-color: #ffce4a; /* Accent jaune comme ton dark mode */
+  --card-bg: #111111;
+  --card-border: #222222;
+  --shadow-soft: 0 4px 14px rgba(0,0,0,0.6);
 }
 
-
-body.light-mode {
-background: var(--primary-bg);
-color: var(--primary-text);
-transition: background 0.3s ease, color 0.3s ease;
+body {
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.navbar.light-mode {
-background: rgba(255,255,255,0.6);
-backdrop-filter: blur(10px);
-border-bottom: 1px solid var(--card-border);
+/* NAVBAR - Dark par défaut */
+.navbar {
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--card-border);
 }
-.navbar.light-mode a {
-color: var(--primary-text);
+.navbar a {
+  color: var(--primary-text);
 }
-.navbar.light-mode a:hover {
-color: var(--secondary-color);
-}
-
-
-.hero.light-mode {
-background: #ffffff;
-}
-.hero.light-mode h1,
-.hero.light-mode p {
-color: var(--primary-text);
+.navbar a:hover {
+  color: var(--secondary-color);
 }
 
-.card.light-mode {
-background: var(--card-bg);
-border: 1px solid var(--card-border);
-box-shadow: var(--shadow-soft);
-color: var(--primary-text);
+/* HERO - Dark */
+.hero {
+  background: #000000;
 }
-.card.light-mode:hover {
-transform: translateY(-4px);
-box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+.hero h1,
+.hero p {
+  color: var(--primary-text);
 }
 
-
-.btn.light-mode {
-background: var(--secondary-color);
-color: #fff;
-border: none;
-transition: background 0.3s ease, transform 0.2s ease;
+/* CARDS - Dark */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+  color: var(--primary-text);
 }
-.btn.light-mode:hover {
-background: #3b55cc;
-transform: scale(1.03);
-}
-
-footer.light-mode {
-background: #f2f2f2;
-color: #111;
-border-top: 1px solid #e4e4e4;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
 }
 
-section.light-mode {
-background: #ffffff;
-border: 1px solid #eaeaea;
-border-radius: 16px;
-padding: 40px;
-box-shadow: var(--shadow-soft);
+/* BUTTONS - Dark */
+.btn {
+  background: var(--secondary-color);
+  color: #000;
+  border: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: #e6b53e;
+  transform: scale(1.03);
 }
 
-
-h2.light-mode, h3.light-mode, h4.light-mode {
-color: var(--primary-text);
+/* FOOTER - Dark */
+footer {
+  background: #0d0d0d;
+  color: #fff;
+  border-top: 1px solid #222;
 }
 
-
-a.light-mode {
-color: var(--secondary-color);
+/* SECTIONS - Dark */
+section {
+  background: #000000;
+  border: 1px solid #191919;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: var(--shadow-soft);
 }
+
+/* TITLES */
+h2, h3, h4 {
+  color: var(--primary-text);
+}
+
+/* LINKS */
+a {
+  color: var(--secondary-color);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body.light {
+  --primary-bg: #ffffff;
+  --primary-text: #111111;
+  --secondary-color: #4a6cff; /* bleu élégant light mode */
+  --card-bg: #f7f7f7;
+  --card-border: #e3e3e3;
+  --shadow-soft: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+body.light {
+  background: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+body.light .navbar {
+  background: rgba(255,255,255,0.6);
+  border-bottom: 1px solid var(--card-border);
+}
+body.light .navbar a {
+  color: var(--primary-text);
+}
+body.light .navbar a:hover {
+  color: var(--secondary-color);
+}
+
+body.light .hero {
+  background: #ffffff;
+}
+body.light .hero h1,
+body.light .hero p {
+  color: var(--primary-text);
+}
+
+body.light .card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--primary-text);
+  box-shadow: var(--shadow-soft);
+}
+
+body.light .btn {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+body.light footer {
+  background: #f3f3f3;
+  color: #222;
+  border-top: 1px solid #ddd;
+}
+
+body.light section {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: var(--shadow-soft);
+}
+
+body.light h2,
+body.light h3,
+body.light h4 {
+  color: var(--primary-text);
+}
+
+body.light a {
+  color: var(--secondary-color);
+}
+body.light a:hover {
+  text-decoration: underline;
+}
+
 
 a.light-mode:hover {
 text-decoration: underline;
