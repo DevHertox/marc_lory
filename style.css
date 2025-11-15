@@ -1717,3 +1717,92 @@ color: #e8a93e;
   height: 100%;
   aspect-ratio: auto;
 }
+
+
+:root {
+--primary-bg: #ffffff;
+--primary-text: #111111;
+--secondary-color: #4a6cff;
+--card-bg: #f7f7f7;
+--card-border: #e3e3e3;
+--shadow-soft: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+
+body.light-mode {
+background: var(--primary-bg);
+color: var(--primary-text);
+transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar.light-mode {
+background: rgba(255,255,255,0.6);
+backdrop-filter: blur(10px);
+border-bottom: 1px solid var(--card-border);
+}
+.navbar.light-mode a {
+color: var(--primary-text);
+}
+.navbar.light-mode a:hover {
+color: var(--secondary-color);
+}
+
+
+.hero.light-mode {
+background: #ffffff;
+}
+.hero.light-mode h1,
+.hero.light-mode p {
+color: var(--primary-text);
+}
+
+.card.light-mode {
+background: var(--card-bg);
+border: 1px solid var(--card-border);
+box-shadow: var(--shadow-soft);
+color: var(--primary-text);
+}
+.card.light-mode:hover {
+transform: translateY(-4px);
+box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+
+.btn.light-mode {
+background: var(--secondary-color);
+color: #fff;
+border: none;
+transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn.light-mode:hover {
+background: #3b55cc;
+transform: scale(1.03);
+}
+
+footer.light-mode {
+background: #f2f2f2;
+color: #111;
+border-top: 1px solid #e4e4e4;
+}
+
+section.light-mode {
+background: #ffffff;
+border: 1px solid #eaeaea;
+border-radius: 16px;
+padding: 40px;
+box-shadow: var(--shadow-soft);
+}
+
+
+h2.light-mode, h3.light-mode, h4.light-mode {
+color: var(--primary-text);
+}
+
+
+a.light-mode {
+color: var(--secondary-color);
+}
+
+a.light-mode:hover {
+text-decoration: underline;
+}
