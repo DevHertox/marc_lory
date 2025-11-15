@@ -167,50 +167,20 @@ document.addEventListener('DOMContentLoaded', function() {
 // ==========================
 // Style Switcher
 // ==========================
-const styleSwitcher = document.querySelector('.style-switcher');
-const styleSwitcherToggler = document.querySelector('.style-switcher-toggler');
 
-styleSwitcherToggler.addEventListener('click', () => {
-    styleSwitcher.classList.toggle('active');
-});
 
-const themeButtons = document.querySelectorAll('.theme-btn');
-
-themeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        themeButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        
-        const theme = button.textContent.toLowerCase();
-        if (theme === 'dark') {
-            document.body.classList.add('dark');
-        } else {
-            document.body.classList.remove('dark');
-        }
-    });
-});
-
-const colorBoxes = document.querySelectorAll('.color-box');
-
-function setActiveStyle(color) {
-    colorBoxes.forEach((box) => {
-        box.classList.remove('active');
-        if (box.classList.contains(color)) {
-            box.classList.add('active');
-        }
-    });
-    
-    let newColor;
-    switch(color) {
-        case 'color-1': newColor = '#e8a93e'; break;
-        case 'color-2': newColor = '#008000'; break;
-        case 'color-3': newColor = '#c81b1b'; break;
-        case 'color-4': newColor = '#ff6b00'; break;
-        case 'color-5': newColor = '#0099ff'; break;
-        default: newColor = '#e8a93e';
+function setTheme(theme) {
+    if (theme === "light") {
+        document.body.classList.add("light");
+    } else {
+        document.body.classList.remove("light");
     }
-    document.documentElement.style.setProperty('--secondary-color', newColor);
 }
+
+
+// ==========================
+// Gallery
+// ==========================
 
 const track = document.querySelector("#mobile-gallery .gallery-track");
 let imgs = track.querySelectorAll("img");
