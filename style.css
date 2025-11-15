@@ -1,28 +1,23 @@
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --background-color: #ecf0f1;
-    --text-color: #34495e;
-    --card-bg: #ffffff;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    --border-color: #ddd;
-}
-
-body.dark {
     --primary-color: #f5f6fa;
     --secondary-color: #e8a93e;
     --background-color: #1a1a1a;
     --text-color: #dcdcdc;
     --card-bg: #2d3436;
-    --white-text: #fff;  
+    --white-text: #ffffff;
     --shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
     --border-color: #4a4a4a;
 }
-body.dark h1, body.dark h2, body.dark h3, body.dark h4 {
-    color: var(--primary-color);
-}
-body.dark .section-container:nth-child(even) {
-    background-color: #262c2e;
+
+body.light {
+    --primary-color: #1a1a1a;
+    --secondary-color: #e8a93e;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f0f0f0;
+    --white-text: #000000;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-color: #d0d0d0;
 }
 
 .color-box.color-1 { background-color: #e8a93e; }
@@ -1716,171 +1711,4 @@ color: #e8a93e;
   width: 50%;
   height: 100%;
   aspect-ratio: auto;
-}
-
-
-/* Dark = default theme */
-:root {
-  --primary-bg: #000000;
-  --primary-text: #ffffff;
-  --secondary-color: #ffce4a; /* Accent jaune comme ton dark mode */
-  --card-bg: #111111;
-  --card-border: #222222;
-  --shadow-soft: 0 4px 14px rgba(0,0,0,0.6);
-}
-
-body {
-  background: var(--primary-bg);
-  color: var(--primary-text);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* NAVBAR - Dark par défaut */
-.navbar {
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--card-border);
-}
-.navbar a {
-  color: var(--primary-text);
-}
-.navbar a:hover {
-  color: var(--secondary-color);
-}
-
-/* HERO - Dark */
-.hero {
-  background: #000000;
-}
-.hero h1,
-.hero p {
-  color: var(--primary-text);
-}
-
-/* CARDS - Dark */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--shadow-soft);
-  color: var(--primary-text);
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-}
-
-/* BUTTONS - Dark */
-.btn {
-  background: var(--secondary-color);
-  color: #000;
-  border: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.btn:hover {
-  background: #e6b53e;
-  transform: scale(1.03);
-}
-
-/* FOOTER - Dark */
-footer {
-  background: #0d0d0d;
-  color: #fff;
-  border-top: 1px solid #222;
-}
-
-/* SECTIONS - Dark */
-section {
-  background: #000000;
-  border: 1px solid #191919;
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: var(--shadow-soft);
-}
-
-/* TITLES */
-h2, h3, h4 {
-  color: var(--primary-text);
-}
-
-/* LINKS */
-a {
-  color: var(--secondary-color);
-}
-a:hover {
-  text-decoration: underline;
-}
-
-body.light {
-  --primary-bg: #ffffff;
-  --primary-text: #111111;
-  --secondary-color: #4a6cff; /* bleu élégant light mode */
-  --card-bg: #f7f7f7;
-  --card-border: #e3e3e3;
-  --shadow-soft: 0 4px 14px rgba(0,0,0,0.08);
-}
-
-body.light {
-  background: var(--primary-bg);
-  color: var(--primary-text);
-}
-
-body.light .navbar {
-  background: rgba(255,255,255,0.6);
-  border-bottom: 1px solid var(--card-border);
-}
-body.light .navbar a {
-  color: var(--primary-text);
-}
-body.light .navbar a:hover {
-  color: var(--secondary-color);
-}
-
-body.light .hero {
-  background: #ffffff;
-}
-body.light .hero h1,
-body.light .hero p {
-  color: var(--primary-text);
-}
-
-body.light .card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  color: var(--primary-text);
-  box-shadow: var(--shadow-soft);
-}
-
-body.light .btn {
-  background: var(--secondary-color);
-  color: #fff;
-}
-
-body.light footer {
-  background: #f3f3f3;
-  color: #222;
-  border-top: 1px solid #ddd;
-}
-
-body.light section {
-  background: #ffffff;
-  border: 1px solid #eaeaea;
-  box-shadow: var(--shadow-soft);
-}
-
-body.light h2,
-body.light h3,
-body.light h4 {
-  color: var(--primary-text);
-}
-
-body.light a {
-  color: var(--secondary-color);
-}
-body.light a:hover {
-  text-decoration: underline;
-}
-
-
-a.light-mode:hover {
-text-decoration: underline;
 }
