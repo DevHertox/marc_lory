@@ -1742,3 +1742,42 @@ body.mode-scene-lumiere .mode-icon-lumiere {
     opacity: 1;
     visibility: visible;
 }
+
+.scenic-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.scenic-mode-toggle i {
+    font-size: 1.5rem;
+    color: var(--white-text); 
+    position: absolute; 
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.mode-icon-lumiere {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+body.mode-scene-lumiere .mode-icon-ombre {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+body.mode-scene-lumiere .mode-icon-lumiere {
+    opacity: 1;
+    transform: rotate(0deg);
+}
