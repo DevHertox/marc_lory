@@ -7,20 +7,20 @@
     --white-text: #ffffff;
     --shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
     --border-color: #4a4a4a;
-    /* Texte de la première section/Navbar qui doit être visible (clair en mode sombre) */
+    /* NOUVEAU : Texte de la première section/Navbar qui doit être visible (clair en mode sombre) */
     --header-text-color: var(--primary-color);
 }
 
 body.light {
     --primary-color: #1a1a1a;
-    --secondary-color: #3498db; /* Bleu vif pour le mode clair */
+    --secondary-color: #3498db; /* MODIFIÉ : Bleu vif pour le mode clair */
     --background-color: #ffffff;
     --text-color: #333333;
     --card-bg: #f0f0f0;
     --white-text: #000000;
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     --border-color: #d0d0d0;
-    /* Texte de la première section/Navbar qui doit être visible (foncé en mode clair) */
+    /* NOUVEAU : Texte de la première section/Navbar qui doit être visible (foncé en mode clair) */
     --header-text-color: var(--primary-color);
 }
 
@@ -28,31 +28,31 @@ body.light {
 .style-switcher {
     position: fixed;
     top: 50%;
-    left: -150px; /* Caché par défaut à gauche */
+    left: -150px; /* MODIFIÉ: Caché par défaut à gauche */
     transform: translateY(-50%);
     background: var(--card-bg);
     padding: 20px;
     width: 150px;
-    border-radius: 0 8px 8px 0; /* Coins arrondis à droite */
+    border-radius: 0 8px 8px 0; /* MODIFIÉ: Coins arrondis à droite */
     box-shadow: var(--shadow);
-    transition: left 0.3s ease; /* Transition sur 'left' */
+    transition: left 0.3s ease; /* MODIFIÉ: Transition sur 'left' */
     z-index: 1000;
     color: var(--text-color);
 }
 
 .style-switcher.open {
-    left: 0; /* Visible à gauche */
+    left: 0; /* MODIFIÉ: Visible à gauche */
 }
 
 .style-switcher-toggler {
     position: absolute;
     top: 50%;
-    right: -40px; /* Positionné à l'extérieur, à droite du panneau, pour être visible */
+    right: -40px; /* MODIFIÉ: Positionné à l'extérieur, à droite du panneau, pour être visible */
     transform: translateY(-50%);
     background: var(--secondary-color);
     width: 40px;
     height: 40px;
-    border-radius: 0 8px 8px 0; /* Coins arrondis à droite */
+    border-radius: 0 8px 8px 0; /* MODIFIÉ: Coins arrondis à droite */
     display: flex;
     justify-content: center;
     align-items: center;
