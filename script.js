@@ -54,7 +54,6 @@ const toastContainer = document.getElementById('toast-container');
 const correctCode = 'CV25';
 
 function showToast(message, type = 'success') {
-    if (!toastContainer) return; // VÉRIFICATION D'EXISTENCE
     const toast = document.createElement('div');
     toast.classList.add('toast', type);
     toast.innerText = message;
@@ -65,59 +64,54 @@ function showToast(message, type = 'success') {
     }, 3000);
 }
 
-// VÉRIFICATION D'EXISTENCE
 if (cvDownloadBtn) {
-    cvDownloadBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (popupOverlay && codeInput) {
-            popupOverlay.style.display = 'flex';
+    cvDownloadBtn.addEventListener('click', () => {
+        popupOverlay.style.display = 'flex';
+        codeInput.value = ''; 
+    });
+}
+
+if (cancelBtn) {
+    cancelBtn.addEventListener('click', () => {
+        popupOverlay.style.display = 'none';
+    });
+}
+
+if (submitBtn) {
+    submitBtn.addEventListener('click', () => {
+        const enteredCode = codeInput.value.trim().toUpperCase();
+
+        if (enteredCode === correctCode) {
+            popupOverlay.style.display = 'none';
+            // Simule le téléchargement du CV (remplacer par votre vrai fichier si besoin)
+            const a = document.createElement('a');
+            a.href = 'Lory-Marc-CV.pdf'; 
+            a.download = 'Lory-Marc-CV.pdf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showToast('Code correct! Téléchargement en cours...', 'success');
+        } else {
+            showToast('Code incorrect. Veuillez réessayer.', 'error');
             codeInput.value = '';
             codeInput.focus();
         }
     });
 }
 
-// VÉRIFICATION D'EXISTENCE
-if (cancelBtn && popupOverlay) {
-    cancelBtn.addEventListener('click', () => {
-        popupOverlay.style.display = 'none';
+
+// ==========================
+// Progress Bar
+// ==========================
+const progressBar = document.querySelector('.progress-bar');
+
+if (progressBar) {
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = scrolled + '%';
     });
-}
-
-// VÉRIFICATION D'EXISTENCE
-if (submitBtn) {
-    submitBtn.addEventListener('click', handleCodeSubmit);
-}
-
-// VÉRIFICATION D'EXISTENCE
-if (codeInput) {
-    codeInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            handleCodeSubmit();
-        }
-    });
-}
-
-function handleCodeSubmit() {
-    if (!codeInput || !cvDownloadBtn) return; // VÉRIFICATION D'EXISTENCE
-    const userCode = codeInput.value.trim();
-    if (userCode === correctCode) {
-        if (popupOverlay) popupOverlay.style.display = 'none';
-        showToast('✅ Téléchargement en cours...', 'success');
-
-        const fileUrl = cvDownloadBtn.getAttribute('href');
-        if (fileUrl) { // VÉRIFICATION D'EXISTENCE
-            const link = document.createElement('a');
-            link.href = fileUrl;
-            link.setAttribute('download', 'CV-Marc-Lory.pdf');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    } else {
-        showToast('❌ Code incorrect. Réessayez.', 'error');
-        codeInput.focus();
-    }
 }
 
 // ==========================
@@ -126,7 +120,6 @@ function handleCodeSubmit() {
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
-// VÉRIFICATION D'EXISTENCE
 if (hamburger && navMenu) {
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
@@ -141,167 +134,167 @@ if (hamburger && navMenu) {
 
 
 // ==========================
-// Carousel Gallery
+// Navbar Scroll & Hide
 // ==========================
-const carousel = document.querySelector('.carousel-container .carousel');
-const prevButton = document.querySelector('.carousel-container .prev-button');
-const nextButton = document.querySelector('.carousel-container .next-button');
-const carouselItems = document.querySelectorAll('.carousel-item');
-const numItems = carouselItems.length;
-let currentAngle = 0;
-let currentIndex = 0;
-const indicator = document.getElementById('current-image-index');
+document.addEventListener("DOMContentLoaded", function() {
+    const navbar = document.querySelector('.navbar');
+    let lastScrollY = 0;
+    const navbarHeight = navbar.offsetHeight; 
 
-// VÉRIFICATION D'EXISTENCE
-if (carousel && prevButton && nextButton && numItems > 0 && indicator) {
-    const angle = 360 / numItems;
+    window.addEventListener('scroll', () => {
+        if (!navbar) return;
 
-    function updateIndicator() {
-        const normalizedAngle = (currentAngle % 360 + 360) % 360;
-        currentIndex = Math.round(normalizedAngle / angle);
-        if (currentIndex === numItems) {
-            currentIndex = 0;
-        }
-        indicator.textContent = (numItems - currentIndex);
-    }
-
-    prevButton.addEventListener('click', () => {
-        if (window.innerWidth > 768) {
-            currentAngle += angle;
-            carousel.style.transform = `rotateY(${currentAngle}deg)`;
-            updateIndicator();
+        // Effet de barre d'ombre
+        if (window.scrollY > 50) { 
+            navbar.classList.add('navbar-scrolled');
         } else {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : numItems - 1;
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-            indicator.textContent = (currentIndex + 1);
+            navbar.classList.remove('navbar-scrolled');
         }
+
+        // Effet de masquage
+        if (window.scrollY > 300) { 
+            if (window.scrollY < lastScrollY) {
+                // Scroll vers le haut
+                navbar.classList.remove('navbar-hidden');
+            } else {
+                // Scroll vers le bas
+                navbar.classList.add('navbar-hidden');
+            }
+        } else {
+            // Toujours visible en haut de page
+            navbar.classList.remove('navbar-hidden');
+            navbar.classList.add('navbar-scrolled');
+        }
+        lastScrollY = window.scrollY;
     });
+});
 
-    nextButton.addEventListener('click', () => {
-        if (window.innerWidth > 768) {
-            currentAngle -= angle;
-            carousel.style.transform = `rotateY(${currentAngle}deg)`;
-            updateIndicator();
-        } else {
-            currentIndex = (currentIndex < numItems - 1) ? currentIndex + 1 : 0;
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-            indicator.textContent = (currentIndex + 1);
+// =================================================
+/* STYLE SWITCHER (Thème Clair / Sombre) - UNIFIÉ  */
+// =================================================
+
+const THEME_STORAGE_KEY = 'lorymarc_theme';
+const styleSwitcher = document.querySelector(".style-switcher");
+const toggler = document.querySelector(".style-switcher-toggler");
+const themeButtons = document.querySelectorAll(".theme-btn");
+
+
+// 1. Applique le thème au chargement (avec persistance)
+function loadTheme() {
+    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    const initialTheme = storedTheme || 'dark'; // Thème par défaut est 'dark'
+
+    setTheme(initialTheme);
+}
+
+// 2. Fonction principale pour appliquer le thème
+function setTheme(theme) {
+    if (theme === "light") {
+        document.body.classList.add("light");
+        localStorage.setItem(THEME_STORAGE_KEY, 'light');
+    } else {
+        document.body.classList.remove("light");
+        localStorage.setItem(THEME_STORAGE_KEY, 'dark');
+    }
+    
+    // Met à jour les boutons pour montrer le mode actif
+    themeButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.classList.contains(theme + '-mode')) {
+            btn.classList.add('active');
         }
     });
 }
 
+// 3. Gestion de l'ouverture/fermeture du panneau
+if (toggler) {
+    toggler.addEventListener("click", () => {
+        styleSwitcher.classList.toggle("open");
+    });
+}
 
-// ==========================
-// Navbar scroll effect
-// ==========================
-document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.querySelector('.navbar');
-    let lastScrollY = window.scrollY;
-
-    // VÉRIFICATION D'EXISTENCE
-    if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (lastScrollY < window.scrollY) {
-                navbar.classList.add('navbar-hidden');
-                navbar.classList.remove('navbar-scrolled');
-            } else {
-                if (window.scrollY > 50) { 
-                    navbar.classList.remove('navbar-hidden');
-                    navbar.classList.add('navbar-scrolled');
-                } else {
-                    navbar.classList.remove('navbar-scrolled');
-                }
-            }
-            lastScrollY = window.scrollY;
-        });
-    }
+// 4. Ajoute les écouteurs d'événements aux boutons Dark/Light (déjà gérés via onclick dans index.html, mais ceci est plus robuste)
+themeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const theme = btn.classList.contains('light-mode') ? 'light' : 'dark';
+        setTheme(theme);
+    });
 });
 
+// Lance la fonction de chargement de thème au démarrage
+document.addEventListener("DOMContentLoaded", loadTheme);
+
 
 // ==========================
-// Gallery (Mobile Infinite Scroll)
+// Gallery
 // ==========================
-
 const track = document.querySelector("#mobile-gallery .gallery-track");
-
-// VÉRIFICATION D'EXISTENCE CRITIQUE
 if (track) {
     let imgs = track.querySelectorAll("img");
 
-    // VÉRIFICATION CRITIQUE : Y a-t-il des images ?
-    if (imgs.length > 0) {
-        const first = imgs[0].cloneNode(true);
-        const last = imgs[imgs.length - 1].cloneNode(true);
+    const first = imgs[0].cloneNode(true);
+    const last = imgs[imgs.length - 1].cloneNode(true);
 
-        track.appendChild(first);      
-        track.insertBefore(last, imgs[0]); 
+    // Ajout d'éléments clonés pour le défilement infini
+    track.appendChild(first);      
+    track.insertBefore(last, imgs[0]); 
 
-        // S'assurer que imgs[0] est accessible avant de l'utiliser
-        if (imgs[0]) {
-            track.scrollLeft = imgs[0].offsetWidth + 12; 
-        }
+    // Ajustement initial du scroll pour cacher la première copie
+    track.scrollLeft = imgs[0].offsetWidth + 12; 
 
-        track.addEventListener("scroll", () => {
-          const itemWidth = imgs[0].offsetWidth + 12;
-          const maxScroll = (imgs.length) * itemWidth;
+    // Logique pour le défilement infini
+    track.addEventListener("scroll", () => {
+      const itemWidth = imgs[0].offsetWidth + 12;
+      const maxScroll = (imgs.length + 1) * itemWidth; 
 
-          if (track.scrollLeft <= 0) {
-            track.scrollLeft = (imgs.length - 1) * itemWidth;
-          } 
-          else if (track.scrollLeft >= maxScroll) {
-            track.scrollLeft = itemWidth;
-          }
-        });
-    }
+      if (track.scrollLeft >= maxScroll - itemWidth) {
+        // Retour au début (l'original de la première image)
+        track.scrollLeft = itemWidth;
+      } else if (track.scrollLeft <= 0) {
+        // Retour à la fin (l'original de la dernière image)
+        track.scrollLeft = maxScroll - (2 * itemWidth);
+      }
+    });
 }
 
+// ==========================
+// Lightbox
+// ==========================
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const galleryImages = document.querySelectorAll('#mobile-gallery img, .carousel-item img'); 
+let currentIndex = 0;
+let imagesArray = Array.from(galleryImages);
 
-/* ================================================= */
-/* GESTION DU MODE SCÈNE (Clair / Sombre)            */
-/* ================================================= */
+function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = imagesArray[currentIndex].src;
+    lightbox.classList.add('active');
+}
 
-(function () {
-    const toggleButton = document.getElementById('modeSceneToggle');
-    const THEME_STORAGE_KEY = 'lorymarc_scenic_mode';
-    const LIGHT_MODE_CLASS = 'mode-scene-lumiere';
+function closeLightbox() {
+    lightbox.classList.remove('active');
+}
 
-    function applyTheme(mode) {
-        if (mode === 'light') {
-            document.body.classList.add(LIGHT_MODE_CLASS);
-        } else {
-            document.body.classList.remove(LIGHT_MODE_CLASS);
-        }
+function navigateLightbox(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = imagesArray.length - 1;
+    } else if (currentIndex >= imagesArray.length) {
+        currentIndex = 0;
     }
+    lightboxImg.src = imagesArray[currentIndex].src;
+}
 
-    function getInitialTheme() {
-        const storedMode = localStorage.getItem(THEME_STORAGE_KEY);
+galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+});
 
-        // Si l'utilisateur a un choix enregistré, on l'applique
-        if (storedMode === 'light') {
-            return 'light';
-        }
-        // Sinon, on applique le thème par défaut (sombre)
-        return 'dark'; 
+document.querySelector('.close').addEventListener('click', closeLightbox);
+document.querySelector('.prev').addEventListener('click', () => navigateLightbox(-1));
+document.querySelector('.next').addEventListener('click', () => navigateLightbox(1));
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
     }
-
-    applyTheme(getInitialTheme());
-
-    // VÉRIFICATION D'EXISTENCE
-    if (toggleButton) {
-        toggleButton.addEventListener('click', () => {
-            const isLightMode = document.body.classList.contains(LIGHT_MODE_CLASS);
-            let newMode;
-
-            if (isLightMode) {
-                newMode = 'dark';
-                document.body.classList.remove(LIGHT_MODE_CLASS);
-            } else {
-                newMode = 'light';
-                document.body.classList.add(LIGHT_MODE_CLASS);
-            }
-
-            localStorage.setItem(THEME_STORAGE_KEY, newMode);
-        });
-    }
-
-})();
+});
