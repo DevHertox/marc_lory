@@ -1065,19 +1065,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="footer-col footer-social">
 
                     <h3>Suivez-moi</h3>
-
                     <div class="social-icons">
-
                         <a href="https://www.instagram.com/marc_comedien_figurant" rel="instagram-link" target="_blank"><i class="fab fa-instagram"></i></a>
-
                         <a href="https://www.linkedin.com/in/marc-l-938655214" rel="linkedin-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-
 <a href="https://nawak.com/book/marc-lory" target="_blank" rel="nawak-link" class="icon-large">
-
         <i class="fa-solid fa-n"></i>
-
       </a> 
-
                     </div>
 
                 </div>
@@ -1086,102 +1079,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
         </footer>
 
-
-
     </div>
-
-
 
     <div class="scenic-mode-toggle" id="modeSceneToggle">
-
         <i class="fas fa-camera-retro mode-icon-ombre"></i>
-
         <i class="fas fa-sun mode-icon-lumiere"></i>
-
     </div>
-
-
-
+    
 <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 
 <script>
-
   const backToTop = document.getElementById("backToTop");
-
-
   window.addEventListener("scroll", () => {
-
     if (window.scrollY > window.innerHeight) {
-
       backToTop.classList.add("show");
-
     } else {
-
       backToTop.classList.remove("show");
-
     }
-
   });
-
-
   backToTop.addEventListener("click", () => {
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 
   });
-
   const textarea = document.getElementById("message");
-
-
 function toggleVerticalAlign() {
-
   if (textarea.value.trim() === "") {
-
     textarea.style.display = "flex";
-
     textarea.style.alignItems = "center";
-
     textarea.style.textAlign = "center"; 
-
   } else {
-
     textarea.style.display = "block";
-
     textarea.style.textAlign = "left";
-
   }
-
 }
-
-
 textarea.addEventListener("blur", toggleVerticalAlign);
-
-
-
 toggleVerticalAlign();
-
-
-
-
-
 </script>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
-
 AOS.init({
-
   duration: 1000,
-
   once: true
-
 });
-
 </script> 
-
 </body>
-
 </html>
