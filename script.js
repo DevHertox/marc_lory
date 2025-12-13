@@ -264,7 +264,7 @@ if (track) {
 (function () {
     const toggleButton = document.getElementById('modeSceneToggle');
     const THEME_STORAGE_KEY = 'lorymarc_scenic_mode';
-    const LIGHT_MODE_CLASS = 'mode-scene-lumiere';
+    const LIGHT_MODE_CLASS = 'mode-scene-lumiere'; 
 
     function applyTheme(mode) {
         if (mode === 'light') {
