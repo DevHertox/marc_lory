@@ -7,52 +7,49 @@
     --white-text: #ffffff;
     --shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
     --border-color: #4a4a4a;
-    /* NOUVEAU : Texte de la première section/Navbar qui doit être visible (clair en mode sombre) */
     --header-text-color: var(--primary-color);
 }
 
-body.light {
+body.mode-scene-lumiere {
     --primary-color: #1a1a1a;
-    --secondary-color: #3498db; /* MODIFIÉ : Bleu vif pour le mode clair */
+    --secondary-color: #3498db; 
     --background-color: #ffffff;
     --text-color: #333333;
     --card-bg: #f0f0f0;
     --white-text: #000000;
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     --border-color: #d0d0d0;
-    /* NOUVEAU : Texte de la première section/Navbar qui doit être visible (foncé en mode clair) */
     --header-text-color: var(--primary-color);
 }
 
-/* * CORRECTION MAJEURE: Le panneau glisse maintenant depuis la gauche */
 .style-switcher {
     position: fixed;
     top: 50%;
-    left: -150px; /* MODIFIÉ: Caché par défaut à gauche */
+    left: -150px;
     transform: translateY(-50%);
     background: var(--card-bg);
     padding: 20px;
     width: 150px;
-    border-radius: 0 8px 8px 0; /* MODIFIÉ: Coins arrondis à droite */
+    border-radius: 0 8px 8px 0; 
     box-shadow: var(--shadow);
-    transition: left 0.3s ease; /* MODIFIÉ: Transition sur 'left' */
+    transition: left 0.3s ease;
     z-index: 1000;
     color: var(--text-color);
 }
 
 .style-switcher.open {
-    left: 0; /* MODIFIÉ: Visible à gauche */
+    left: 0;
 }
 
 .style-switcher-toggler {
     position: absolute;
     top: 50%;
-    right: -40px; /* MODIFIÉ: Positionné à l'extérieur, à droite du panneau, pour être visible */
+    right: -40px; 
     transform: translateY(-50%);
     background: var(--secondary-color);
     width: 40px;
     height: 40px;
-    border-radius: 0 8px 8px 0; /* MODIFIÉ: Coins arrondis à droite */
+    border-radius: 0 8px 8px 0;
     display: flex;
     justify-content: center;
     align-items: center;
