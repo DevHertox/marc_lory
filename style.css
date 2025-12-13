@@ -24,37 +24,35 @@ body.light {
     --header-text-color: var(--primary-color);
 }
 
-/* * CORRECTION : Réutilisation du style d'origine pour le style-switcher 
- * (panneau à droite) et suppression des styles conflictuels.
- */
+/* * CORRECTION MAJEURE: Le panneau glisse maintenant depuis la gauche */
 .style-switcher {
     position: fixed;
     top: 50%;
-    right: -150px; /* Caché par défaut */
+    left: -150px; /* MODIFIÉ: Caché par défaut à gauche */
     transform: translateY(-50%);
     background: var(--card-bg);
     padding: 20px;
     width: 150px;
-    border-radius: 8px 0 0 8px;
+    border-radius: 0 8px 8px 0; /* MODIFIÉ: Coins arrondis à droite */
     box-shadow: var(--shadow);
-    transition: right 0.3s ease;
+    transition: left 0.3s ease; /* MODIFIÉ: Transition sur 'left' */
     z-index: 1000;
-    color: var(--text-color); /* Assure la couleur du texte dans le panneau */
+    color: var(--text-color);
 }
 
 .style-switcher.open {
-    right: 0;
+    left: 0; /* MODIFIÉ: Visible à gauche */
 }
 
 .style-switcher-toggler {
     position: absolute;
     top: 50%;
-    left: -40px; /* Positionné à l'extérieur, à gauche du panneau */
+    right: -40px; /* MODIFIÉ: Positionné à l'extérieur, à droite du panneau, pour être visible */
     transform: translateY(-50%);
-    background: var(--secondary-color); /* Couleur d'accent pour le bouton */
+    background: var(--secondary-color);
     width: 40px;
     height: 40px;
-    border-radius: 8px 0 0 8px;
+    border-radius: 0 8px 8px 0; /* MODIFIÉ: Coins arrondis à droite */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +61,7 @@ body.light {
 
 .style-switcher-toggler i {
     font-size: 1.8rem;
-    color: var(--white-text); /* Icône blanche */
+    color: var(--white-text);
     animation: rotate 2s linear infinite;
     transition: transform 0.3s;
 }
@@ -281,7 +279,7 @@ body.dark .navbar-scrolled {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--header-text-color); /* CORRIGÉ */
+    color: var(--header-text-color);
     text-decoration: none;
     transition: font-size 0.4s ease;
 
@@ -299,7 +297,7 @@ body.dark .navbar-scrolled {
 
 .nav-link {
     text-decoration: none;
-    color: var(--header-text-color); /* CORRIGÉ */
+    color: var(--header-text-color);
     font-weight: 600;
     transition: color 0.3s ease;
     padding: 0.5rem 0.5rem; 
@@ -364,7 +362,6 @@ body.dark .navbar-scrolled {
     margin-bottom: 1rem;
     color: var(--primary-color);
     font-size: 1.8rem;
-    /* Suppression du h2::after dans le popup */
 }
   
 .popup input {
@@ -537,7 +534,7 @@ input {
     transform: translateY(20px); 
     animation: fadeInSlideUp 1s ease-out forwards;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    color: var(--header-text-color); /* CORRIGÉ */
+    color: var(--header-text-color);
 }
 
 .animated-text:nth-child(2) {
@@ -599,7 +596,7 @@ input {
 .description-box p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: var(--header-text-color); /* CORRIGÉ */
+    color: var(--header-text-color);
 }
 
 @keyframes fadeIn {
@@ -815,8 +812,8 @@ body.dark .card-back {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background: var(--secondary-color); /* CORRIGÉ */
-  color: var(--white-text); /* CORRIGÉ */
+  background: var(--secondary-color);
+  color: var(--white-text);
   border: none;
   padding: 12px 16px;
   border-radius: 50%;
@@ -1346,10 +1343,6 @@ width: 50%;
   margin-top: 10px;
 }
 
-/* * Définition du Style Switcher de Lignes 890-958 SUPPRIMÉE car elle était en conflit.
- * Le Style Switcher est défini aux lignes 20-65.
- */
-
 
 textarea {
   resize: none;
@@ -1615,7 +1608,7 @@ display: none;
 .skills-section .section-title {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: var(--secondary-color); /* CORRIGÉ */
+  color: var(--secondary-color);
 }
 
 .skills-section .section-subtitle {
@@ -1651,7 +1644,7 @@ display: none;
 
 .skill-card h3 {
   margin-bottom: 1rem;
-  color: var(--secondary-color); /* CORRIGÉ */
+  color: var(--secondary-color);
 }
 
 .skill-bar {
@@ -1665,7 +1658,7 @@ display: none;
 .skill-progress {
   height: 100%;
   width: 0;
-  background: var(--secondary-color); /* CORRIGÉ */
+  background: var(--secondary-color);
   border-radius: 10px;
   transition: width 1.5s ease-in-out;
 }
@@ -1687,7 +1680,7 @@ background: none;
 
 
 .cpgu-link a {
-color: var(--secondary-color); /* CORRIGÉ */
+color: var(--secondary-color);
 }
 
 
