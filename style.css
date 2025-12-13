@@ -1720,3 +1720,25 @@ body.mode-scene-lumiere .mode-icon-lumiere {
     opacity: 1;
     visibility: visible;
 }
+.scenic-mode-toggle i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.mode-icon-lumiere {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.mode-scene-lumiere .mode-icon-ombre {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.mode-scene-lumiere .mode-icon-lumiere {
+    opacity: 1;
+    visibility: visible;
+}
