@@ -257,44 +257,53 @@ if (track) {
     });
 }
 
-// ==========================
-// Lightbox
-// ==========================
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const galleryImages = document.querySelectorAll('#mobile-gallery img, .carousel-item img'); 
-let currentIndex = 0;
-let imagesArray = Array.from(galleryImages);
+/* ================================================= */
+/* GESTION DU MODE SCÈNE (Clair / Sombre)            */
+/* ================================================= */
 
-function openLightbox(index) {
-    currentIndex = index;
-    lightboxImg.src = imagesArray[currentIndex].src;
-    lightbox.classList.add('active');
-}
+(function () {
+    const toggleButton = document.getElementById('modeSceneToggle');
+    const THEME_STORAGE_KEY = 'lorymarc_scenic_mode';
+    const LIGHT_MODE_CLASS = 'mode-scene-lumiere';
 
-function closeLightbox() {
-    lightbox.classList.remove('active');
-}
-
-function navigateLightbox(direction) {
-    currentIndex += direction;
-    if (currentIndex < 0) {
-        currentIndex = imagesArray.length - 1;
-    } else if (currentIndex >= imagesArray.length) {
-        currentIndex = 0;
+    function applyTheme(mode) {
+        if (mode === 'light') {
+            document.body.classList.add(LIGHT_MODE_CLASS);
+        } else {
+            document.body.classList.remove(LIGHT_MODE_CLASS);
+        }
     }
-    lightboxImg.src = imagesArray[currentIndex].src;
-}
 
-galleryImages.forEach((img, index) => {
-    img.addEventListener('click', () => openLightbox(index));
-});
+    function getInitialTheme() {
+        const storedMode = localStorage.getItem(THEME_STORAGE_KEY);
+        
+        if (storedMode) { 
+            return storedMode;
+        }
 
-document.querySelector('.close').addEventListener('click', closeLightbox);
-document.querySelector('.prev').addEventListener('click', () => navigateLightbox(-1));
-document.querySelector('.next').addEventListener('click', () => navigateLightbox(1));
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        closeLightbox();
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            return 'light'; 
+        }
+        
+        return 'dark'; 
     }
-});
+
+    applyTheme(getInitialTheme()); 
+
+    if (toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            const isLightMode = document.body.classList.contains(LIGHT_MODE_CLASS);
+            let newMode;
+
+            if (isLightMode) {
+                newMode = 'dark';
+                document.body.classList.remove(LIGHT_MODE_CLASS);
+            } else {
+                newMode = 'light';
+                document.body.classList.add(LIGHT_MODE_CLASS);
+            }
+
+            localStorage.setItem(THEME_STORAGE_KEY, newMode);
+        });
+    }
+})();
